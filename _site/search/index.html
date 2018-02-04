@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Search | KapitalWise</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Search" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="KapitalWise Smart Saving and Investing API documentation." />
+<meta property="og:description" content="KapitalWise Smart Saving and Investing API documentation." />
+<link rel="canonical" href="http://localhost:4000/search/" />
+<meta property="og:url" content="http://localhost:4000/search/" />
+<meta property="og:site_name" content="KapitalWise" />
+<script type="application/ld+json">
+{"description":"KapitalWise Smart Saving and Investing API documentation.","@type":"WebPage","url":"http://localhost:4000/search/","headline":"Search","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/KapitalWiseBanner.png" height="40" alt="KapitalWise logo"></a>
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	
+	
+		
+	
+		
+			<section>
+				<h6>Documentation</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#documentationgetting_started">
+								Getting Started
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationauthentication">
+								Authentication
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationerrors">
+								Errors
+								
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>APIs</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#apiusers_list">
+								/users
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiusers_add">
+								/users
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiusers_get">
+								/users/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiusers_update">
+								/users/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiusers_delete">
+								/users/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiaccounts_list">
+								/accounts
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiaccounts_add">
+								/accounts
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiaccounts_get">
+								/accounts/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiaccounts_update">
+								/accounts/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiaccounts_delete">
+								/accounts/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apistrategies_add">
+								/strategies
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apistrategies_get">
+								/strategies/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apistrategies_update">
+								/strategies/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apistrategies_delete">
+								/strategies/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiinvestments_add">
+								/investments
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiinvestments_get">
+								/investments/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiinvestment_history_get">
+								/investment_history/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+</div>
+
+
+			<p class="copyright">
+				<a href="http://kapitalwise.com/">
+					Documents by KapitalWise
+				</a>
+			</p>
+		</header>
+		<div class="main">
+			<div class="search-page">
+	<h2>Search Results</h2>
+
+	<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+	<ul id="search-results"></ul>
+</div>
+
+<script>
+	window.data = {
+		
+			
+				
+					
+						
+						
+						"api-accounts-add": {
+							"id": "api-accounts-add",
+							"title": "/accounts",
+							"category": "api",
+							"description": "Create User",
+		  				"type": "post",
+							"url": "/#apiaccounts_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-accounts-delete": {
+							"id": "api-accounts-delete",
+							"title": "/accounts/:id",
+							"category": "api",
+							"description": "Deletes a user",
+		  				"type": "delete",
+							"url": "/#apiaccounts_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-accounts-get": {
+							"id": "api-accounts-get",
+							"title": "/accounts/:id",
+							"category": "api",
+							"description": "Get User",
+		  				"type": "get",
+							"url": "/#apiaccounts_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-accounts-list": {
+							"id": "api-accounts-list",
+							"title": "/accounts",
+							"category": "api",
+							"description": "List all books",
+		  				"type": "get",
+							"url": "/#apiaccounts_list",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-accounts-update": {
+							"id": "api-accounts-update",
+							"title": "/accounts/:id",
+							"category": "api",
+							"description": "Update Book",
+		  				"type": "put",
+							"url": "/#apiaccounts_update",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-investment-history-get": {
+							"id": "api-investment-history-get",
+							"title": "/investment_history/:id",
+							"category": "api",
+							"description": "Update Book",
+		  				"type": "put",
+							"url": "/#apiinvestment_history_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-investments-add": {
+							"id": "api-investments-add",
+							"title": "/investments",
+							"category": "api",
+							"description": "Create User",
+		  				"type": "post",
+							"url": "/#apiinvestments_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-investments-get": {
+							"id": "api-investments-get",
+							"title": "/investments/:id",
+							"category": "api",
+							"description": "Get User",
+		  				"type": "get",
+							"url": "/#apiinvestments_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-strategies-add": {
+							"id": "api-strategies-add",
+							"title": "/strategies",
+							"category": "api",
+							"description": "Create User",
+		  				"type": "post",
+							"url": "/#apistrategies_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-strategies-delete": {
+							"id": "api-strategies-delete",
+							"title": "/strategies/:id",
+							"category": "api",
+							"description": "Deletes a user",
+		  				"type": "delete",
+							"url": "/#apistrategies_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-strategies-get": {
+							"id": "api-strategies-get",
+							"title": "/strategies/:id",
+							"category": "api",
+							"description": "Get User",
+		  				"type": "get",
+							"url": "/#apistrategies_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-strategies-update": {
+							"id": "api-strategies-update",
+							"title": "/strategies/:id",
+							"category": "api",
+							"description": "Update Book",
+		  				"type": "put",
+							"url": "/#apistrategies_update",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-add": {
+							"id": "api-users-add",
+							"title": "/users",
+							"category": "api",
+							"description": "Create User",
+		  				"type": "post",
+							"url": "/#apiusers_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-delete": {
+							"id": "api-users-delete",
+							"title": "/users/:id",
+							"category": "api",
+							"description": "Deletes a user",
+		  				"type": "delete",
+							"url": "/#apiusers_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-get": {
+							"id": "api-users-get",
+							"title": "/users/:id",
+							"category": "api",
+							"description": "Get User",
+		  				"type": "get",
+							"url": "/#apiusers_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-list": {
+							"id": "api-users-list",
+							"title": "/users",
+							"category": "api",
+							"description": "List all users",
+		  				"type": "get",
+							"url": "/#apiusers_list",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-update": {
+							"id": "api-users-update",
+							"title": "/users/:id",
+							"category": "api",
+							"description": "Update User",
+		  				"type": "put",
+							"url": "/#apiusers_update",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"documentation-authentication": {
+							"id": "documentation-authentication",
+							"title": "Authentication",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationauthentication",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-errors": {
+							"id": "documentation-errors",
+							"title": "Errors",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationerrors",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-getting-started": {
+							"id": "documentation-getting-started",
+							"title": "Getting Started",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationgetting_started",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+		
+	};
+</script>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>
+
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
