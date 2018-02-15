@@ -11,7 +11,7 @@ content_markdown: |-
 left_code_blocks:
   - code_block: |-
       $.ajax({
-        "url": "http://api.myapp.com/books/3",
+        "url": "http://api.kapitalwise.com/strategies/123",
         "type": "DELETE",
         "data": {
           "token": "YOUR_APP_KEY"
@@ -25,7 +25,7 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |2-
       {
-        "id": 3,
+        "id": 123,
         "status": "deleted"
       }
     title: Response
@@ -33,7 +33,7 @@ right_code_blocks:
   - code_block: |2-
       {
         "error": true,
-        "message": "Book doesn't exist"
+        "message": "Strategy doesn't exist"
       }
     title: Error
     language: json

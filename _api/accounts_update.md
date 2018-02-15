@@ -4,21 +4,43 @@ position: 2.4
 type: put
 description: Update Book
 parameters:
-  - name: title
-    content: The title for the book
-  - name: score
-    content: The book's score between 0 and 5
+  - name: userId
+    content: The account owner. 
+  - name: externalId
+    content: The external id for the account. Yodlee, Plaid or bank's own id. 
+  - name: accountName
+    content: Account name
+  - name: accountNumber
+    content: The masked account number for display
+  - name: nickname
+    content: Account nick name
+  - name: accountType
+    content: Type of account. Checking, saving, credit etc.
+  - name: providerType
+    content: The account data provider. Yodlee, Plaid or banks 
+  - name: loginName
+    content: The login name if any
+  - name: password
+    content: The password if any
+  - name: memo
+    content: The memo
 content_markdown: |-
   Update an existing book in your collection.
 left_code_blocks:
   - code_block: |-
       $.ajax({
-        "url": "http://api.myapp.com/books/3",
+        "url": "http://api.myapp.com/accounts/3",
         "type": "PUT",
         "data": {
           "token": "YOUR_APP_KEY",
-          "score": 5.0,
-          "title": "The Book Stealer"
+          "userId": 123,
+          "externalId" :  "vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D",
+          "accountName":  "Chase Saving",
+          "accountNumber": "XXXX4230",
+          "nickname" : "My Chase Saving",
+          "accountType":  "Saving",
+          "loginName" :  "ydltestlogin",
+          "password":  "ydltestpassw"
         },
         "success": function(data) {
           alert(data);
@@ -29,17 +51,32 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |2-
       {
-        "id": 3,
-        "title": "The Book Stealer",
-        "score": 5,
-        "dateAdded": "5/1/2015"
+        "userId": 123,
+        "externalId" :  "vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D",
+        "accountName":  "Chase Saving",
+        "accountNumber": "XXXX4230",
+        "nickname" : "My Chase Saving",
+        "accountType":  "Saving",
+        "providerType":  "YODLEE",
+        "loginName" :  "ydltestlogin",
+        "password":  "ydltestpassword",
+        "memo":  "Test memo"
       }
     title: Response
     language: json
   - code_block: |2-
+       {
+        "error": true,
+        "message": "Necessary parameter(s) are missing"
+      }
       {
         "error": true,
-        "message": "Book doesn't exist"
+        "message": "Invalid user"
+      }
+      {
+        "error": true,
+        "message": "Invalid score"
+      }"message": "Book doesn't exist"
       }
     title: Error
     language: json

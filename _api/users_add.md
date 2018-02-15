@@ -5,39 +5,39 @@ type: post
 description: Create User
 parameters:
   - name: dateOfBirth
-    content: The title for the book
-  - name: state
-    content: The book's score between 0 and 5
-  - name: lastName
-    content: The title for the book
+    content: User's date of birth
   - name: firstName
-    content: The book's score between 0 and 5
+    content: User's first name
+  - name: lastName
+    content: User's last name
   - name: address1
-    content: The title for the book
+    content: User's address line one
   - name: address2
-    content: The title for the book
+    content: User's adress line two
+  - name: state
+    content: User's state
   - name: city
-    content: The title for the book
+    content: User's city
   - name: zip
-    content: The book's score between 0 and 5 
+    content: User's zip
   - name: email
-    content: The book's score between 0 and 5 
+    content: User's email
   - name: phone
-    content: The book's score between 0 and 5
+    content: User's phone
   - name: ssn
-    content: The book's score between 0 and 5
+    content: User's social security number
   - name: passcode
-    content: The book's score between 0 and 5
+    content: Four digit passcode 
   - name: password
-    content: The book's score between 0 and 5
+    content: Password
   - name: subBackupWithld
-    content: The book's score between 0 and 5 
+    content: Is this user subjected to backup withholding 
   - name: usResident
-    content: The book's score between 0 and 5
+    content: Is this user US resident
   - name: brokerDealerAff
-    content: The title for the book
+    content: Is this user affiliated to any broker dealer
   - name: boardMember
-    content: The book's score between 0 and 5
+    content: Is this user board member of a public listed company
 
 content_markdown: |-
   The book will automatically be added to your reading list
@@ -46,10 +46,25 @@ content_markdown: |-
   Adds a book to your collection.
 left_code_blocks:
   - code_block: |-
-      $.post("http://api.kapitalwise.com/books/", {
+      $.post("http://api.kapitalwise.com/users/", {
         "token": "YOUR_APP_KEY",
-        "title": "The Book Thief",
-        "score": 4.3
+        "dateOfBirth": "05/28/1988",
+        "state": "NY",
+        "lastName": "John",
+        "firstName": "Doe",
+        "address1": "43",
+        "zip": "10010",
+        "address2": "W 23rd Street",
+        "usResident": "true",
+        "city": "New York",
+        "brokerDealerAff": "false",
+        "boardMember": "false",
+        "email": "john.doe@gmail.com",
+        "subBackupWithld": "false",
+        "phone":"+19143184030",
+        "ssn": "152225201",
+        "passcode": "3100",
+        "password": "kap1talw1se"
       }, function(data) {
         alert(data);
       });

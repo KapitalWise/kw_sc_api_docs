@@ -55,7 +55,8 @@ right_code_blocks:
         "boardMember": "false",
         "email": "john.doe@gmail.com",
         "subBackupWithld": "false",
-        "phone":"+19143184030"
+        "phone":"+19143184030",
+        "strategies":[124,156]
         },
         { 
         "id": 2,
@@ -72,7 +73,8 @@ right_code_blocks:
         "boardMember": "false",
         "email": "elizabeth.hibbet@gmail.com",
         "subBackupWithld": "false",
-        "phone":"+12019367778"
+        "phone":"+12019367778",
+        "strategies":[423,345]
         }
       ]
     title: Response

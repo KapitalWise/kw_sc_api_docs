@@ -10,7 +10,7 @@ content_markdown: |-
   Returns a specific book from your collection
 left_code_blocks:
   - code_block: |-
-      $.get("http://api.myapp.com/books/3", {
+      $.get("http://api.kapitalwise.com/accounts/5", {
         token: "YOUR_APP_KEY",
       }, function(data) {
         alert(data);
@@ -21,16 +21,27 @@ right_code_blocks:
   - code_block: |2-
       {
         "id": 3,
-        "title": "The Book Thief",
-        "score": 4.3,
-        "dateAdded": "5/1/2015"
+        "userId": 1223,
+        "externalId" :  "vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D",
+        "accountName":  "Chase Saving",
+        "accountNumber": "XXXX4230",
+        "nickname" : "My Chase Saving",
+        "accountType":  "Saving",
+        "providerType":  "YODLEE",
+        "loginName" :  "ydltestlogin",
+        "password":  "ydltestpassword",
+        "memo":  "Test memo"
       }
     title: Response
     language: json
   - code_block: |2-
       {
         "error": true,
-        "message": "Book doesn't exist"
+        "message": "Necessary query parameter(s) are missing"
+      }
+      {
+        "error": true,
+        "message": "Requested account not found"
       }
     title: Error
     language: json

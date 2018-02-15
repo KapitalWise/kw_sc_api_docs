@@ -79,6 +79,13 @@
 					
 					
 						<li>
+							<a href="#apianalytics_get">
+								/analytics/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="#apiusers_list">
 								/users
 								<span class="endpoint get"></span>
@@ -184,16 +191,23 @@
 						</li>
 					
 						<li>
-							<a href="#apiinvestments_get">
-								/investments/:id
+							<a href="#apiinvestment_history_get">
+								/investment_history/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiroboquestions_list">
+								/robo/questions
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiinvestment_history_get">
-								/investment_history/:id
-								<span class="endpoint put"></span>
+							<a href="#apiroborecommendation_get">
+								/robo/recommend
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -367,6 +381,165 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
+					<a id="apianalytics_get">
+						/analytics/:id
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/analytics_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get user's personal financial analytics</p>
+				
+				
+				
+
+				<p>Returns a specific book from your collection</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/analytics/3"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"accountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mf">700000.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creditCardDebt"</span><span class="p">:</span><span class="w"> </span><span class="mf">3400.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountsLinked"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hasMortgage"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hasAutoLoan"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hasChildSupport"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"incomeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"salaried"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"income"</span><span class="p">:</span><span class="w"> </span><span class="mf">11000.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"top10SpendingPercent"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"home"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"bills"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"dining"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"travel"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"shopping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"childCare"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"entertainment"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"top3OverSpendingPercent"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"autoInsurance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gas&amp;Fuel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mobilePhone"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"spending12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">8500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">7560.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6600.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5400.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">3500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">4500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5500.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"Balance12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">66000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">60500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">64000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">71060.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">66600.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65400.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">52500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">63500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">61900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">54500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65500.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"top10Spending12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"home"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">36900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"bills"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"dining"</span><span class="p">:</span><span class="w"> </span><span class="mf">708.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"travel"</span><span class="p">:</span><span class="w"> </span><span class="mf">1900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"shopping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2300.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"childCare"</span><span class="p">:</span><span class="w"> </span><span class="mf">22000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mf">2040.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"entertainment"</span><span class="p">:</span><span class="w"> </span><span class="mf">789.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mf">16000.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"debt12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">4520.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">6010.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5005.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6404.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">3460.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6600.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6540.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5250.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6350.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6100.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5450.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6550.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"recurringExpense"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"publicService"</span><span class="p">:</span><span class="w"> </span><span class="mf">240.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"townGas"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">210</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"homeMtg"</span><span class="p">:</span><span class="w"> </span><span class="mf">3600.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mobilePhone"</span><span class="p">:</span><span class="w"> </span><span class="mf">169.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+ </span><span class="s2">"Predictions"</span><span class="p">:</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"nextWeekCashflow"</span><span class="p">:</span><span class="w"> </span><span class="mf">300.00</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"nextMontCashflow"</span><span class="p">:</span><span class="w"> </span><span class="mf">11300.00</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"nextWeekAccBal"</span><span class="p">:</span><span class="w"> </span><span class="mf">71000.00</span><span class="w">
+   </span><span class="s2">"nextMonthAccBal"</span><span class="p">:</span><span class="w"> </span><span class="mf">68000.00</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+ </span><span class="s2">"savingTips"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You spending 7% more on car insurence"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Pay with your Amex 42000 when you dine out and get 2% cash back"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
 					<a id="apiusers_list">
 						/users
 						
@@ -458,7 +631,8 @@
   </span><span class="s2">"boardMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"subBackupWithld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"strategies"</span><span class="p">:[</span><span class="mi">124</span><span class="p">,</span><span class="mi">156</span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w"> 
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -475,7 +649,8 @@
   </span><span class="s2">"boardMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elizabeth.hibbet@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"subBackupWithld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+12019367778"</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+12019367778"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"strategies"</span><span class="p">:[</span><span class="mi">423</span><span class="p">,</span><span class="mi">345</span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
@@ -515,55 +690,55 @@
 				    <dl>
 				        
 				            <dt>dateOfBirth</dt>
-				            <dd>The title for the book</dd>
-				        
-				            <dt>state</dt>
-				            <dd>The book's score between 0 and 5</dd>
-				        
-				            <dt>lastName</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's date of birth</dd>
 				        
 				            <dt>firstName</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's first name</dd>
+				        
+				            <dt>lastName</dt>
+				            <dd>User's last name</dd>
 				        
 				            <dt>address1</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's address line one</dd>
 				        
 				            <dt>address2</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's adress line two</dd>
+				        
+				            <dt>state</dt>
+				            <dd>User's state</dd>
 				        
 				            <dt>city</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's city</dd>
 				        
 				            <dt>zip</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's zip</dd>
 				        
 				            <dt>email</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's email</dd>
 				        
 				            <dt>phone</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's phone</dd>
 				        
 				            <dt>ssn</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's social security number</dd>
 				        
 				            <dt>passcode</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Four digit passcode</dd>
 				        
 				            <dt>password</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Password</dd>
 				        
 				            <dt>subBackupWithld</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Is this user subjected to backup withholding</dd>
 				        
 				            <dt>usResident</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Is this user US resident</dd>
 				        
 				            <dt>brokerDealerAff</dt>
-				            <dd>The title for the book</dd>
+				            <dd>Is this user affiliated to any broker dealer</dd>
 				        
 				            <dt>boardMember</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Is this user board member of a public listed company</dd>
 				        
 				    </dl>
 				
@@ -578,10 +753,25 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/books/"</span><span class="p">,</span> <span class="p">{</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/"</span><span class="p">,</span> <span class="p">{</span>
   <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-  <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Book Thief"</span><span class="p">,</span>
-  <span class="s2">"score"</span><span class="p">:</span> <span class="mf">4.3</span>
+  <span class="s2">"dateOfBirth"</span><span class="p">:</span> <span class="s2">"05/28/1988"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="p">:</span> <span class="s2">"NY"</span><span class="p">,</span>
+  <span class="s2">"lastName"</span><span class="p">:</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"firstName"</span><span class="p">:</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"address1"</span><span class="p">:</span> <span class="s2">"43"</span><span class="p">,</span>
+  <span class="s2">"zip"</span><span class="p">:</span> <span class="s2">"10010"</span><span class="p">,</span>
+  <span class="s2">"address2"</span><span class="p">:</span> <span class="s2">"W 23rd Street"</span><span class="p">,</span>
+  <span class="s2">"usResident"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="p">:</span> <span class="s2">"New York"</span><span class="p">,</span>
+  <span class="s2">"brokerDealerAff"</span><span class="p">:</span> <span class="s2">"false"</span><span class="p">,</span>
+  <span class="s2">"boardMember"</span><span class="p">:</span> <span class="s2">"false"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"john.doe@gmail.com"</span><span class="p">,</span>
+  <span class="s2">"subBackupWithld"</span><span class="p">:</span> <span class="s2">"false"</span><span class="p">,</span>
+  <span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="p">,</span>
+  <span class="s2">"ssn"</span><span class="p">:</span> <span class="s2">"152225201"</span><span class="p">,</span>
+  <span class="s2">"passcode"</span><span class="p">:</span> <span class="s2">"3100"</span><span class="p">,</span>
+  <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"kap1talw1se"</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -700,7 +890,8 @@
   </span><span class="s2">"boardMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"subBackupWithld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"strategies"</span><span class="p">:[</span><span class="mi">124</span><span class="p">,</span><span class="mi">156</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -739,55 +930,55 @@
 				    <dl>
 				        
 				            <dt>dateOfBirth</dt>
-				            <dd>The title for the book</dd>
-				        
-				            <dt>state</dt>
-				            <dd>The book's score between 0 and 5</dd>
-				        
-				            <dt>lastName</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's date of birth</dd>
 				        
 				            <dt>firstName</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's first name</dd>
+				        
+				            <dt>lastName</dt>
+				            <dd>User's last name</dd>
 				        
 				            <dt>address1</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's address line one</dd>
 				        
 				            <dt>address2</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's adress line two</dd>
+				        
+				            <dt>state</dt>
+				            <dd>User's state</dd>
 				        
 				            <dt>city</dt>
-				            <dd>The title for the book</dd>
+				            <dd>User's city</dd>
 				        
 				            <dt>zip</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's zip</dd>
 				        
 				            <dt>email</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's email</dd>
 				        
 				            <dt>phone</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's phone</dd>
 				        
 				            <dt>ssn</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>User's social security number</dd>
 				        
 				            <dt>passcode</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Four digit passcode</dd>
 				        
 				            <dt>password</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Password</dd>
 				        
 				            <dt>subBackupWithld</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Is this user subjected to backup withholding</dd>
 				        
 				            <dt>usResident</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Is this user US resident</dd>
 				        
 				            <dt>brokerDealerAff</dt>
-				            <dd>The title for the book</dd>
+				            <dd>Is this user affiliated to any broker dealer</dd>
 				        
 				            <dt>boardMember</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dd>Is this user board member of a public listed company</dd>
 				        
 				    </dl>
 				
@@ -958,12 +1149,12 @@
 				            <dd>Offset the results by this amount</dd>
 				        
 				            <dt>limit</dt>
-				            <dd>Limit the number of books returned</dd>
+				            <dd>Limit the number of accounts returned</dd>
 				        
 				    </dl>
 				
 
-				<p class="info">This call will return a maximum of 100 books</p>
+				<p class="info">This call will return a maximum of 100 accounts</p>
 
 <p>Lists all the photos you have access to. You can paginate by using the parameters listed above.</p>
 
@@ -973,7 +1164,7 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books/"</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/accounts/"</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -982,7 +1173,7 @@
 				        
 
 
-<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.myapp.com/books/"</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s">"YOUR_APP_KEY"</span><span class="p">)</span>
+<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.kapitalwise.com/accounts/"</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s">"YOUR_APP_KEY"</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
 </code></pre></div></div>
 
@@ -991,7 +1182,7 @@
 
 
 <div title="Node.js" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
-<span class="nx">request</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books?token=YOUR_APP_KEY"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">request</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/accounts?token=YOUR_APP_KEY"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1001,7 +1192,7 @@
 				        
 
 
-<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://sampleapi.readme.com/orders?key<span class="o">=</span>YOUR_APP_KEY
+<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://api.kapitalwise.com/accounts?key<span class="o">=</span>YOUR_APP_KEY
 </code></pre></div></div>
 
 		            
@@ -1015,17 +1206,31 @@
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Hunger Games"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12/12/2013"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Hunger Games"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15/12/2013"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1223</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"externalId"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountName"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"memo"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Test memo"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1224</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"externalId"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GASWDCF3DD"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountName"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Chase Checking"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4223"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Checking"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Checking"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"memo"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Test memo"</span><span class="w">
+</span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1063,18 +1268,40 @@
 				    <h6>Parameters</h6>
 				    <dl>
 				        
-				            <dt>title</dt>
-				            <dd>The title for the book</dd>
+				            <dt>userId</dt>
+				            <dd>The account owner.</dd>
 				        
-				            <dt>score</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dt>externalId</dt>
+				            <dd>The external id for the account. Yodlee, Plaid or bank's own id.</dd>
+				        
+				            <dt>accountName</dt>
+				            <dd>Account name</dd>
+				        
+				            <dt>accountNumber</dt>
+				            <dd>The masked account number for display</dd>
+				        
+				            <dt>nickname</dt>
+				            <dd>Account nick name</dd>
+				        
+				            <dt>accountType</dt>
+				            <dd>Type of account. Checking, saving, credit etc.</dd>
+				        
+				            <dt>providerType</dt>
+				            <dd>The account data provider. Yodlee, Plaid or banks</dd>
+				        
+				            <dt>loginName</dt>
+				            <dd>The login name if any</dd>
+				        
+				            <dt>password</dt>
+				            <dd>The password if any</dd>
+				        
+				            <dt>memo</dt>
+				            <dd>The memo</dd>
 				        
 				    </dl>
 				
 
-				<p class="success">The book will automatically be added to your reading list</p>
-
-<p>Adds a book to your collection.</p>
+				<p class="success">The account will automatically be added to the user</p>
 
 				
 				
@@ -1082,10 +1309,17 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books/"</span><span class="p">,</span> <span class="p">{</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/accounts/"</span><span class="p">,</span> <span class="p">{</span>
   <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-  <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Book Thief"</span><span class="p">,</span>
-  <span class="s2">"score"</span><span class="p">:</span> <span class="mf">4.3</span>
+  <span class="s2">"userId"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s2">"externalId"</span> <span class="p">:</span>  <span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span>
+  <span class="s2">"accountName"</span><span class="p">:</span>  <span class="s2">"Chase Saving"</span><span class="p">,</span>
+  <span class="s2">"accountNumber"</span><span class="p">:</span> <span class="s2">"XXXX4230"</span><span class="p">,</span>
+  <span class="s2">"nickname"</span> <span class="p">:</span> <span class="s2">"My Chase Saving"</span><span class="p">,</span>
+  <span class="s2">"accountType"</span><span class="p">:</span>  <span class="s2">"Saving"</span><span class="p">,</span>
+  <span class="s2">"providerType"</span><span class="p">:</span>  <span class="s2">"YODLEE"</span><span class="p">,</span>
+  <span class="s2">"loginName"</span> <span class="p">:</span>  <span class="s2">"ydltestlogin"</span><span class="p">,</span>
+  <span class="s2">"password"</span><span class="p">:</span>  <span class="s2">"ydltestpassw"</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -1101,10 +1335,16 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"externalId"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountName"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"memo"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Test memo"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1113,6 +1353,18 @@
 
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid Provider"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1148,7 +1400,7 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span> <span class="p">{</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/accounts/5"</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -1166,9 +1418,16 @@
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1223</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"externalId"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountName"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"memo"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Test memo"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1178,7 +1437,11 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary query parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requested account not found"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1206,11 +1469,35 @@
 				    <h6>Parameters</h6>
 				    <dl>
 				        
-				            <dt>title</dt>
-				            <dd>The title for the book</dd>
+				            <dt>userId</dt>
+				            <dd>The account owner.</dd>
 				        
-				            <dt>score</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dt>externalId</dt>
+				            <dd>The external id for the account. Yodlee, Plaid or bank's own id.</dd>
+				        
+				            <dt>accountName</dt>
+				            <dd>Account name</dd>
+				        
+				            <dt>accountNumber</dt>
+				            <dd>The masked account number for display</dd>
+				        
+				            <dt>nickname</dt>
+				            <dd>Account nick name</dd>
+				        
+				            <dt>accountType</dt>
+				            <dd>Type of account. Checking, saving, credit etc.</dd>
+				        
+				            <dt>providerType</dt>
+				            <dd>The account data provider. Yodlee, Plaid or banks</dd>
+				        
+				            <dt>loginName</dt>
+				            <dd>The login name if any</dd>
+				        
+				            <dt>password</dt>
+				            <dd>The password if any</dd>
+				        
+				            <dt>memo</dt>
+				            <dd>The memo</dd>
 				        
 				    </dl>
 				
@@ -1224,12 +1511,18 @@
 
 
 <div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.myapp.com/accounts/3"</span><span class="p">,</span>
   <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-    <span class="s2">"score"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
-    <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Book Stealer"</span>
+    <span class="s2">"userId"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s2">"externalId"</span> <span class="p">:</span>  <span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span>
+    <span class="s2">"accountName"</span><span class="p">:</span>  <span class="s2">"Chase Saving"</span><span class="p">,</span>
+    <span class="s2">"accountNumber"</span><span class="p">:</span> <span class="s2">"XXXX4230"</span><span class="p">,</span>
+    <span class="s2">"nickname"</span> <span class="p">:</span> <span class="s2">"My Chase Saving"</span><span class="p">,</span>
+    <span class="s2">"accountType"</span><span class="p">:</span>  <span class="s2">"Saving"</span><span class="p">,</span>
+    <span class="s2">"loginName"</span> <span class="p">:</span>  <span class="s2">"ydltestlogin"</span><span class="p">,</span>
+    <span class="s2">"password"</span><span class="p">:</span>  <span class="s2">"ydltestpassw"</span>
   <span class="p">},</span>
   <span class="s2">"success"</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -1247,10 +1540,16 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Stealer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"externalId"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountName"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"memo"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Test memo"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1258,9 +1557,18 @@
 		    		    
 
 
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
+</span><span class="p">}</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1295,7 +1603,7 @@
 
 
 <div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.kapitalwise.com/accounts/3"</span><span class="p">,</span>
   <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span>
@@ -1327,7 +1635,7 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account doesn't exist"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1348,23 +1656,29 @@
 					<a class="editor-link" href="cloudcannon:collections/_api/strategies_add.md">Edit</a>
 				</h3>
 				
-					<p class="description">Create User</p>
+					<p class="description">Create investment strategy</p>
 				
 				
 				
 				    <h6>Parameters</h6>
 				    <dl>
 				        
-				            <dt>title</dt>
-				            <dd>The title for the book</dd>
+				            <dt>userId</dt>
+				            <dd>The user for the strategy is created for</dd>
 				        
-				            <dt>score</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dt>accountIds</dt>
+				            <dd>String Array of account Id's</dd>
+				        
+				            <dt>strategyType</dt>
+				            <dd>string (enum 'ANALYZE_INVEST', 'ROUNDUP', 'INVEST_WHEN_PAID', 'INVEST_WHEN_SPEND', 'SCHEDULED', 'ONE_TIME')</dd>
+				        
+				            <dt>params</dt>
+				            <dd>Config params arrays</dd>
 				        
 				    </dl>
 				
 
-				<p class="success">The book will automatically be added to your reading list</p>
+				<p class="success">Add a strategy for the user with a set of accounts</p>
 
 <p>Adds a book to your collection.</p>
 
@@ -1374,10 +1688,13 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books/"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-  <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Book Thief"</span><span class="p">,</span>
-  <span class="s2">"score"</span><span class="p">:</span> <span class="mf">4.3</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/strategies/"</span><span class="p">,</span> <span class="p">{</span>
+<span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="s2">"userId"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+<span class="s2">"accountIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span> <span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFED45RT"</span><span class="p">],</span>
+<span class="s2">"strategyType"</span><span class="p">:</span> <span class="s2">"ANALYZE_INVEST"</span><span class="p">,</span>
+<span class="s2">"params"</span><span class="p">:</span> <span class="p">[{</span> <span class="na">key</span><span class="p">:</span> <span class="s2">"max_amount"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span><span class="s2">"500.00"</span> <span class="p">}],</span>
+<span class="s2">"fundIds"</span><span class="p">:</span> <span class="p">[</span><span class="mi">124</span><span class="p">,</span><span class="mi">156</span><span class="p">]</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -1393,10 +1710,12 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+</span><span class="err">userId</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+</span><span class="err">accountIds</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span><span class="w"> </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFED45RT"</span><span class="p">],</span><span class="w">
+</span><span class="err">strategyType</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANALYZE_INVEST"</span><span class="p">,</span><span class="w">
+</span><span class="err">params</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="err">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"max_amount"</span><span class="p">,</span><span class="w"> </span><span class="err">value</span><span class="p">:</span><span class="s2">"500.00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+</span><span class="err">fundIds</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">124</span><span class="p">,</span><span class="mi">156</span><span class="p">],</span><span class="w">
+</span><span class="err">status</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1406,7 +1725,11 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid strategyType value"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1432,7 +1755,7 @@
 				
 				
 
-				<p>Returns a specific book from your collection</p>
+				<p>Returns a specific strategy from the system</p>
 
 				
 				
@@ -1440,7 +1763,7 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span> <span class="p">{</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/strategies/123"</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -1456,11 +1779,14 @@
 		    		    
 
 
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">userId</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="err">accountIds</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span><span class="w"> </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFED45RT"</span><span class="p">],</span><span class="w">
+  </span><span class="err">investmentIds</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">234</span><span class="p">,</span><span class="mi">345</span><span class="p">],</span><span class="w">
+  </span><span class="err">strategyType</span><span class="p">:</span><span class="w"> </span><span class="err">'ANALYZE_INVEST'</span><span class="p">,</span><span class="w">
+  </span><span class="err">params</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="err">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"max_amount"</span><span class="p">,</span><span class="w"> </span><span class="err">value</span><span class="p">:</span><span class="s2">"500.00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+  </span><span class="err">fundIds</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">124</span><span class="p">,</span><span class="mi">156</span><span class="p">],</span><span class="w">
+  </span><span class="err">status</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1470,7 +1796,7 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requested strategy not found"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1498,16 +1824,22 @@
 				    <h6>Parameters</h6>
 				    <dl>
 				        
-				            <dt>title</dt>
-				            <dd>The title for the book</dd>
+				            <dt>userId</dt>
+				            <dd>The user for the strategy is created for</dd>
 				        
-				            <dt>score</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dt>accountIds</dt>
+				            <dd>String Array of account Id's</dd>
+				        
+				            <dt>strategyType</dt>
+				            <dd>string (enum 'ANALYZE_INVEST', 'ROUNDUP', 'INVEST_WHEN_PAID', 'INVEST_WHEN_SPEND', 'SCHEDULED', 'ONE_TIME')</dd>
+				        
+				            <dt>params</dt>
+				            <dd>Config params arrays</dd>
 				        
 				    </dl>
 				
 
-				<p>Update an existing book in your collection.</p>
+				<p>Update an existing strategy in the system.</p>
 
 				
 				
@@ -1516,12 +1848,15 @@
 
 
 <div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.kapitalwise.com/strategies/3"</span><span class="p">,</span>
   <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-    <span class="s2">"score"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
-    <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Book Stealer"</span>
+    <span class="s2">"userId"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s2">"accountIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span> <span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFED45RT"</span><span class="p">],</span>
+    <span class="s2">"strategyType"</span><span class="p">:</span> <span class="s1">'ANALYZE_INVEST'</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">[{</span> <span class="na">key</span><span class="p">:</span> <span class="s2">"max_amount"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span><span class="s2">"500.00"</span> <span class="p">}],</span>
+    <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"ACTIVE"</span>
   <span class="p">},</span>
   <span class="s2">"success"</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -1539,10 +1874,13 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Stealer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+    </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFXGK98D"</span><span class="p">,</span><span class="w"> </span><span class="s2">"vzeNDwK7KQIm4yEog683uElbp9GRLEFED45RT"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"strategyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANALYZE_INVEST"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="err">key</span><span class="p">:</span><span class="w"> </span><span class="s2">"max_amount"</span><span class="p">,</span><span class="w"> </span><span class="err">value</span><span class="p">:</span><span class="s2">"500.00"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"fundIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">124</span><span class="p">,</span><span class="mi">156</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1552,7 +1890,15 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid strategyType value"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid strategy"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1587,7 +1933,7 @@
 
 
 <div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.kapitalwise.com/strategies/123"</span><span class="p">,</span>
   <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span>
@@ -1608,7 +1954,7 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1619,7 +1965,7 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strategy doesn't exist"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1710,70 +2056,6 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiinvestments_get">
-						/investments/:id
-						
-							<span class="endpoint get"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/investments_get.md">Edit</a>
-				</h3>
-				
-					<p class="description">Get User</p>
-				
-				
-				
-
-				<p>Returns a specific book from your collection</p>
-
-				
-				
-				    
-				        
-
-
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-		            
-		        
-			</section>
-			
-			    <section class="right-code">
-	    			
-		    		    
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-		    		    
-
-
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
 					<a id="apiinvestment_history_get">
 						/investment_history/:id
 						
@@ -1845,6 +2127,244 @@
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiroboquestions_list">
+						/robo/questions
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/roboquestions_list.md">Edit</a>
+				</h3>
+				
+					<p class="description">List all risk tolerance questions for the robo recommendation</p>
+				
+				
+				
+				    <h6>Parameters</h6>
+				    <dl>
+				        
+				            <dt>offset</dt>
+				            <dd>Offset the results by this amount</dd>
+				        
+				            <dt>limit</dt>
+				            <dd>Limit the number of accounts returned</dd>
+				        
+				    </dl>
+				
+
+				<p class="info">This call will return a maximum of 100 accounts</p>
+
+<p>Lists all the risk tolerence questions. You can paginate by using the parameters listed above.</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/robo/questions"</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+				        
+
+
+<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.kapitalwise.com/robo/questions"</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s">"YOUR_APP_KEY"</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+</code></pre></div></div>
+
+		            
+				        
+
+
+<div title="Node.js" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/robo/questions?token=YOUR_APP_KEY"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+		            
+				        
+
+
+<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://api.kapitalwise.com/robo/questions?key<span class="o">=</span>YOUR_APP_KEY
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RADIO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Compared to others, how do you rate your willingness to take financial risks?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extremly Low"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Very Low"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Low"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Average"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RADIO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How easily do you adapt when things go wrong financially?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Very difficult"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reasonably difficult"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reasonably well"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No problem"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid offset"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiroborecommendation_get">
+						/robo/recommend
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/roborecommendation_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Return an investment product based on the user's risk tolerence</p>
+				
+				
+				
+				    <h6>Parameters</h6>
+				    <dl>
+				        
+				            <dt>questions</dt>
+				            <dd>Set of questionIds</dd>
+				        
+				            <dt>answers</dt>
+				            <dd>Set of answerIds based on the selection in the same order as answer Ids</dd>
+				        
+				    </dl>
+				
+
+				<p class="info">This call will return an investment fund based on the user’s risk tolerence</p>
+<p>Investment fund based on the user’s risk tolerence</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/robo/recommend"</span><span class="p">,</span> <span class="p">{</span> 
+<span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="s2">"questionIds"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+<span class="s2">"answerIds"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"externalProductId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"313"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fund_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSA SELECT EQUITY FUNDS"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fund_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSAEQTY"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fund_factsheet"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.absainvestments.co.za/wealth-and-investment-management/e-docs/fund-fact-sheets/Absa%20Select%20Equity%20Fund.pdf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fund_info"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"High risk fund for investors who are not risk cautious. This fund is suitable for investors who seek long-term capital growth from equity exposure"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fund_icon_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://image.ibb.co/b96EUa/Core.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"symbol"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSAEQTY"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cusip"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"008000AA7"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fund_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"HightRisk"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not recommend any product"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

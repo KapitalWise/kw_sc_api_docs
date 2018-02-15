@@ -79,6 +79,13 @@
 					
 					
 						<li>
+							<a href="/#apianalytics_get">
+								/analytics/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#apiusers_list">
 								/users
 								<span class="endpoint get"></span>
@@ -184,16 +191,23 @@
 						</li>
 					
 						<li>
-							<a href="/#apiinvestments_get">
-								/investments/:id
+							<a href="/#apiinvestment_history_get">
+								/investment_history/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiroboquestions_list">
+								/robo/questions
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiinvestment_history_get">
-								/investment_history/:id
-								<span class="endpoint put"></span>
+							<a href="/#apiroborecommendation_get">
+								/robo/recommend
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -311,6 +325,23 @@
 					
 						,
 						
+						"api-analytics-get": {
+							"id": "api-analytics-get",
+							"title": "/analytics/:id",
+							"category": "api",
+							"description": "Get user's personal financial analytics",
+		  				"type": "get",
+							"url": "/#apianalytics_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
 						"api-investment-history-get": {
 							"id": "api-investment-history-get",
 							"title": "/investment_history/:id",
@@ -345,13 +376,30 @@
 					
 						,
 						
-						"api-investments-get": {
-							"id": "api-investments-get",
-							"title": "/investments/:id",
+						"api-roboquestions-list": {
+							"id": "api-roboquestions-list",
+							"title": "/robo/questions",
 							"category": "api",
-							"description": "Get User",
+							"description": "List all risk tolerance questions for the robo recommendation",
 		  				"type": "get",
-							"url": "/#apiinvestments_get",
+							"url": "/#apiroboquestions_list",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-roborecommendation-get": {
+							"id": "api-roborecommendation-get",
+							"title": "/robo/recommend",
+							"category": "api",
+							"description": "Return an investment product based on the user's risk tolerence",
+		  				"type": "get",
+							"url": "/#apiroborecommendation_get",
 							"content": ""
 						}
 						
@@ -366,7 +414,7 @@
 							"id": "api-strategies-add",
 							"title": "/strategies",
 							"category": "api",
-							"description": "Create User",
+							"description": "Create investment strategy",
 		  				"type": "post",
 							"url": "/#apistrategies_add",
 							"content": ""
