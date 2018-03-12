@@ -13,7 +13,7 @@ parameters:
   - name: address1
     content: User's address line one
   - name: address2
-    content: User's adress line two
+    content: User's address line two
   - name: state
     content: User's state
   - name: city
@@ -86,10 +86,7 @@ right_code_blocks:
         "boardMember": "false",
         "email": "john.doe@gmail.com",
         "subBackupWithld": "false",
-        "phone":"+19143184030",
-        "ssn": "152225201",
-        "passcode": "3100",
-        "password": "kap1talw1se"
+        "phone":"+19143184030"
       }
     title: Response
     language: json

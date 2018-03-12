@@ -2,12 +2,17 @@
 title: /investments
 position: 4.1
 type: post
-description: Create User
+description: Create Investment, called after the investment is settled with the broker dealer
 parameters:
-  - name: title
-    content: The title for the book
-  - name: score
-    content: The book's score between 0 and 5
+  - name: subscriptionId
+    content: The subscriptionId, this will be passed to you in the ledger
+  - name: fundHoldingId
+    content: The fund holding ID
+  - name: amount
+    content: Amount invested
+  - name: unitPrice
+    content: Fund unit price 
+
 content_markdown: |-
   The book will automatically be added to your reading list
   {: .success}
@@ -15,10 +20,27 @@ content_markdown: |-
   Adds a book to your collection.
 left_code_blocks:
   - code_block: |-
-      $.post("http://api.myapp.com/books/", {
+      $.post("http://api.kapitalwise.com/investments/", {
         "token": "YOUR_APP_KEY",
-        "title": "The Book Thief",
-        "score": 4.3
+        "subscriptionId" : 123,
+        "investmentDetails" : [
+          {
+            "fundHoldingId" : 1,
+            "amount" : 345.00,
+            "unitPrice" : 23.00
+          },
+          {
+            "fundHoldingId" : 2,
+            "amount" : 245.00,
+            "unitPrice" : 34.00
+          },
+          {
+            "fundHoldingId" : 3,
+            "amount" : 350.00,
+            "unitPrice" : 34.00
+          }
+        ],
+        "date" :  "2017-11-19 17:46:48"
       }, function(data) {
         alert(data);
       });
@@ -27,20 +49,35 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |-
       {
-        "id": 3,
-        "title": "The Book Thief",
-        "score": 4.3,
-        "dateAdded": "5/1/2015"
+        "id" : 234,
+        "subscriptionId" : 123,
+        "investmentDetails" : [
+          {
+            "fundHoldingId" : 1,
+            "amount" : 345.00,
+            "unitPrice" : 23.00
+          },
+          {
+            "fundHoldingId" : 2,
+            "amount" : 245.00,
+            "unitPrice" : 34.00
+          },
+          {
+            "fundHoldingId" : 3,
+            "amount" : 350.00,
+            "unitPrice" : 34.00
+          }
+        ],
+        "date" :  "2017-11-19 17:46:48"
+      }
       }
     title: Response
     language: json
   - code_block: |-
       {
         "error": true,
-        "message": "Invalid score"
+        "message": "Invalid parameter"
       }
     title: Error
     language: json
 ---
-
-

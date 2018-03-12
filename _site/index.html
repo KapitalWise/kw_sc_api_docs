@@ -79,13 +79,6 @@
 					
 					
 						<li>
-							<a href="#apianalytics_get">
-								/analytics/:id
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
 							<a href="#apiusers_list">
 								/users
 								<span class="endpoint get"></span>
@@ -192,8 +185,15 @@
 					
 						<li>
 							<a href="#apiinvestment_history_get">
-								/investment_history/:id
-								<span class="endpoint put"></span>
+								/investment/:id/history
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiinvestment_log_get">
+								/investment/:id/log
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -207,6 +207,13 @@
 						<li>
 							<a href="#apiroborecommendation_get">
 								/robo/recommend
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apianalytics_get">
+								/analytics/:id
 								<span class="endpoint get"></span>
 							</a>
 						</li>
@@ -381,165 +388,6 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apianalytics_get">
-						/analytics/:id
-						
-							<span class="endpoint get"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/analytics_get.md">Edit</a>
-				</h3>
-				
-					<p class="description">Get user's personal financial analytics</p>
-				
-				
-				
-
-				<p>Returns a specific book from your collection</p>
-
-				
-				
-				    
-				        
-
-
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/analytics/3"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-		            
-		        
-			</section>
-			
-			    <section class="right-code">
-	    			
-		    		    
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"accountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mf">700000.00</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"creditCardDebt"</span><span class="p">:</span><span class="w"> </span><span class="mf">3400.00</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"accountsLinked"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hasMortgage"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hasAutoLoan"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hasChildSupport"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"incomeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"salaried"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"income"</span><span class="p">:</span><span class="w"> </span><span class="mf">11000.00</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"top10SpendingPercent"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-       </span><span class="s2">"home"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"bills"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"dining"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"travel"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"shopping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"childCare"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"entertainment"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"top3OverSpendingPercent"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"autoInsurance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"gas&amp;Fuel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mobilePhone"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"spending12Months"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">8500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">7560.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6600.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5400.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">3500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6900.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">4500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5500.00</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"Balance12Months"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">66000.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">60500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65000.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">64000.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">71060.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">66600.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65400.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">52500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">63500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">61900.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">54500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65500.00</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"top10Spending12Months"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"home"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">36900.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"bills"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1500.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"dining"</span><span class="p">:</span><span class="w"> </span><span class="mf">708.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"travel"</span><span class="p">:</span><span class="w"> </span><span class="mf">1900.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"shopping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2300.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"childCare"</span><span class="p">:</span><span class="w"> </span><span class="mf">22000.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mf">2040.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"entertainment"</span><span class="p">:</span><span class="w"> </span><span class="mf">789.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mf">16000.00</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"debt12Months"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">4520.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">6010.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5005.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6404.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">3460.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6600.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6540.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5250.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6350.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6100.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5450.00</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6550.00</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"recurringExpense"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"publicService"</span><span class="p">:</span><span class="w"> </span><span class="mf">240.00</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"townGas"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">210</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"homeMtg"</span><span class="p">:</span><span class="w"> </span><span class="mf">3600.00</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mobilePhone"</span><span class="p">:</span><span class="w"> </span><span class="mf">169.00</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.00</span><span class="w">
-  </span><span class="p">},</span><span class="w">
- </span><span class="s2">"Predictions"</span><span class="p">:</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-   </span><span class="s2">"nextWeekCashflow"</span><span class="p">:</span><span class="w"> </span><span class="mf">300.00</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"nextMontCashflow"</span><span class="p">:</span><span class="w"> </span><span class="mf">11300.00</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"nextWeekAccBal"</span><span class="p">:</span><span class="w"> </span><span class="mf">71000.00</span><span class="w">
-   </span><span class="s2">"nextMonthAccBal"</span><span class="p">:</span><span class="w"> </span><span class="mf">68000.00</span><span class="w">
-   </span><span class="p">},</span><span class="w">
- </span><span class="s2">"savingTips"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You spending 7% more on car insurence"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Pay with your Amex 42000 when you dine out and get 2% cash back"</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-		    		    
-
-
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn't exist"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
 					<a id="apiusers_list">
 						/users
 						
@@ -702,7 +550,7 @@
 				            <dd>User's address line one</dd>
 				        
 				            <dt>address2</dt>
-				            <dd>User's adress line two</dd>
+				            <dd>User's address line two</dd>
 				        
 				            <dt>state</dt>
 				            <dd>User's state</dd>
@@ -800,10 +648,7 @@
   </span><span class="s2">"boardMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"subBackupWithld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"152225201"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"passcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3100"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kap1talw1se"</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1986,18 +1831,24 @@
 					<a class="editor-link" href="cloudcannon:collections/_api/investments_add.md">Edit</a>
 				</h3>
 				
-					<p class="description">Create User</p>
+					<p class="description">Create Investment, called after the investment is settled with the broker dealer</p>
 				
 				
 				
 				    <h6>Parameters</h6>
 				    <dl>
 				        
-				            <dt>title</dt>
-				            <dd>The title for the book</dd>
+				            <dt>subscriptionId</dt>
+				            <dd>The subscriptionId, this will be passed to you in the ledger</dd>
 				        
-				            <dt>score</dt>
-				            <dd>The book's score between 0 and 5</dd>
+				            <dt>fundHoldingId</dt>
+				            <dd>The fund holding ID</dd>
+				        
+				            <dt>amount</dt>
+				            <dd>Amount invested</dd>
+				        
+				            <dt>unitPrice</dt>
+				            <dd>Fund unit price</dd>
 				        
 				    </dl>
 				
@@ -2012,10 +1863,27 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.myapp.com/books/"</span><span class="p">,</span> <span class="p">{</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/investments/"</span><span class="p">,</span> <span class="p">{</span>
   <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-  <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Book Thief"</span><span class="p">,</span>
-  <span class="s2">"score"</span><span class="p">:</span> <span class="mf">4.3</span>
+  <span class="s2">"subscriptionId"</span> <span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s2">"investmentDetails"</span> <span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"fundHoldingId"</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"amount"</span> <span class="p">:</span> <span class="mf">345.00</span><span class="p">,</span>
+      <span class="s2">"unitPrice"</span> <span class="p">:</span> <span class="mf">23.00</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"fundHoldingId"</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"amount"</span> <span class="p">:</span> <span class="mf">245.00</span><span class="p">,</span>
+      <span class="s2">"unitPrice"</span> <span class="p">:</span> <span class="mf">34.00</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"fundHoldingId"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"amount"</span> <span class="p">:</span> <span class="mf">350.00</span><span class="p">,</span>
+      <span class="s2">"unitPrice"</span> <span class="p">:</span> <span class="mf">34.00</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"date"</span> <span class="p">:</span>  <span class="s2">"2017-11-19 17:46:48"</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -2031,10 +1899,27 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Thief"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">234</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subscriptionId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"investmentDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fundHoldingId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">345.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"unitPrice"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">23.00</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fundHoldingId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">245.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"unitPrice"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">34.00</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fundHoldingId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">350.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"unitPrice"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">34.00</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"date"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"2017-11-19 17:46:48"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2044,7 +1929,7 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid score"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid parameter"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2057,31 +1942,20 @@
 			<section class="left-docs">
 				<h3>
 					<a id="apiinvestment_history_get">
-						/investment_history/:id
+						/investment/:id/history
 						
-							<span class="endpoint put"></span>
+							<span class="endpoint get"></span>
 						
 					</a>
 					<a class="editor-link" href="cloudcannon:collections/_api/investment_history_get.md">Edit</a>
 				</h3>
 				
-					<p class="description">Update Book</p>
+					<p class="description">Get the history of all investments</p>
 				
 				
-				
-				    <h6>Parameters</h6>
-				    <dl>
-				        
-				            <dt>title</dt>
-				            <dd>The title for the book</dd>
-				        
-				            <dt>score</dt>
-				            <dd>The book's score between 0 and 5</dd>
-				        
-				    </dl>
 				
 
-				<p>Update an existing book in your collection.</p>
+				<p>Get all the past investments associated with this investment.</p>
 
 				
 				
@@ -2090,12 +1964,10 @@
 
 
 <div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.myapp.com/books/3"</span><span class="p">,</span>
-  <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.kapitalwise.com/investment/3/history"</span><span class="p">,</span>
+  <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-    <span class="s2">"score"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
-    <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"The Book Stealer"</span>
   <span class="p">},</span>
   <span class="s2">"success"</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -2113,10 +1985,53 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Book Stealer"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateAdded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5/1/2015"</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountBalance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">12200.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"investmentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">11200.00</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"pendingBalance"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"investmentThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://image.ibb.co/b96EUa/ABSA1.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"holdings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fundName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"SELECT EQUITY FUNDS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fundId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"closePrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fundIcon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://image.ibb.co/b96EUa/Core.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fundFactsheet_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.absainvestments.co.za/wealth-and-investment-management/e-docs/fund-fact-sheets/Absa%20Select%20Equity%20Fund.pdf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"fundName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"BALANCED FUND"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fundId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"closePrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">423.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fundIcon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://image.ibb.co/iNKqX5/Balance.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fundFactsheet_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.absainvestments.co.za/wealth-and-investment-management/e-docs/fund-fact-sheets/Absa%20Balanced%20Fund.pdf"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"performance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"asofdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-06 17:46:48"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">10100.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gain"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"asofdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-29 17:46:48"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">90100.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gain"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"asofdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-19 17:46:48"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">8100.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gain"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"asofdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-12 17:46:48"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gain"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"created"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-12 17:46:48"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2126,7 +2041,120 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Book doesn't exist"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investment doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiinvestment_log_get">
+						/investment/:id/log
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/investment_log_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get the logs for an investment. The logs are transactions contributed to an investment, eg. the transactions we rounded-up to make an investment</p>
+				
+				
+				
+
+				<p>Get all the past investments associated with this investment.</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.kapitalwise.com/investment/3/log"</span><span class="p">,</span>
+  <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"success"</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">343</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://content.kapitalwise.com/images/chase_300_300.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">23.40</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invested_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lunch at John's burger"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"2017-11-19 17:46:48"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">343</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://content.kapitalwise.com/images/chase_300_300.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.50</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"investedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shake Shack 42nd Street"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"2017-11-20 17:46:48"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">343</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://content.kapitalwise.com/images/chase_300_300.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">23.40</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"investedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lunch at John's burger"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"2017-11-21 17:46:48"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">343</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Chase Saving"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://content.kapitalwise.com/images/chase_300_300.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">23.40</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"investedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lunch at John's burger"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"2017-11-22 17:46:48"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investment doesn't exist"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2217,12 +2245,13 @@
     </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RADIO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"category"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"RISK_TOLERANCE"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Compared to others, how do you rate your willingness to take financial risks?"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extremly Low"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extremely Low"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
@@ -2243,32 +2272,37 @@
     </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RADIO"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How easily do you adapt when things go wrong financially?"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Very difficult"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reasonably difficult"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reasonably well"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No problem"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RADIO"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TIME_HORIZON"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"How easily do you adapt when things go wrong financially?"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Very difficult"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"score"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reasonably difficult"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"score"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reasonably well"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"score"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"choice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No problem"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"score"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sno"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
  </span><span class="p">]</span><span class="w">
@@ -2280,7 +2314,7 @@
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid offset"</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid offset/limit"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2308,17 +2342,20 @@
 				    <h6>Parameters</h6>
 				    <dl>
 				        
-				            <dt>questions</dt>
-				            <dd>Set of questionIds</dd>
+				            <dt>userId</dt>
+				            <dd>The user for the fund is recommend</dd>
 				        
-				            <dt>answers</dt>
-				            <dd>Set of answerIds based on the selection in the same order as answer Ids</dd>
+				            <dt>questionId</dt>
+				            <dd>The Id of the question</dd>
+				        
+				            <dt>answerId</dt>
+				            <dd>The selected answer Id</dd>
 				        
 				    </dl>
 				
 
-				<p class="info">This call will return an investment fund based on the user’s risk tolerence</p>
-<p>Investment fund based on the user’s risk tolerence</p>
+				<p class="info">This call will return an investment fund based on the user’s risk tolerance</p>
+<p>Investment fund based on the user’s risk tolerance</p>
 
 				
 				
@@ -2328,8 +2365,20 @@
 
 <div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/robo/recommend"</span><span class="p">,</span> <span class="p">{</span> 
 <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-<span class="s2">"questionIds"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-<span class="s2">"answerIds"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="s2">"userId"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span>
+<span class="s2">"userResponses"</span><span class="p">:</span> <span class="p">[</span>
+<span class="p">{</span>
+  <span class="s2">"questionId"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="s2">"answerId"</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">},</span>
+<span class="p">{</span>
+  <span class="s2">"questionId"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> 
+  <span class="s2">"answerId"</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+<span class="p">{</span>
+  <span class="s2">"questionId"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> 
+  <span class="s2">"answerId"</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}]</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -2347,14 +2396,14 @@
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
   </span><span class="s2">"externalProductId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"313"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fund_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSA SELECT EQUITY FUNDS"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fund_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSAEQTY"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fund_factsheet"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.absainvestments.co.za/wealth-and-investment-management/e-docs/fund-fact-sheets/Absa%20Select%20Equity%20Fund.pdf"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fund_info"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"High risk fund for investors who are not risk cautious. This fund is suitable for investors who seek long-term capital growth from equity exposure"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fund_icon_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://image.ibb.co/b96EUa/Core.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fundName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSA SELECT EQUITY FUNDS"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fundCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSAEQTY"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fundFactsheet"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.absainvestments.co.za/wealth-and-investment-management/e-docs/fund-fact-sheets/Absa%20Select%20Equity%20Fund.pdf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fundInfo"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"High risk fund for investors who are not risk cautious. This fund is suitable for investors who seek long-term capital growth from equity exposure"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fundIconUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://image.ibb.co/b96EUa/Core.png"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"symbol"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ABSAEQTY"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"cusip"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"008000AA7"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fund_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"HightRisk"</span><span class="w">
+  </span><span class="s2">"fundType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"HighRisk"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2365,6 +2414,165 @@
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not recommend any product"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apianalytics_get">
+						/analytics/:id
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/analytics_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Get user's personal financial analytics</p>
+				
+				
+				
+
+				<p>The /analytics/:id endpoint allows developers to receive user financial analytics data for credit and depository-type Accounts. Analytics data is standardized across accounts. This API also provides predicted future cash flow and account balances for the user.</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/analytics/3"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"accountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mf">700000.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creditCardDebt"</span><span class="p">:</span><span class="w"> </span><span class="mf">3400.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountsLinked"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hasMortgage"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hasAutoLoan"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hasChildSupport"</span><span class="p">:</span><span class="w"> </span><span class="err">yes</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"incomeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"salaried"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"income"</span><span class="p">:</span><span class="w"> </span><span class="mf">11000.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"top10SpendingPercent"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"home"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"bills"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"dining"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"travel"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"shopping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"childCare"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"entertainment"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"top3OverSpendingPercent"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"autoInsurance"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gas&amp;Fuel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mobilePhone"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"spending12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">7000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">8500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6400.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">7560.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6600.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5400.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">3500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">4500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5500.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"Balance12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">66000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">60500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">64000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">71060.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">66600.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65400.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">52500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">63500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">61900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">54500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">65500.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"top10Spending12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"home"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">36900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"bills"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1500.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"dining"</span><span class="p">:</span><span class="w"> </span><span class="mf">708.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"travel"</span><span class="p">:</span><span class="w"> </span><span class="mf">1900.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"shopping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2300.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"childCare"</span><span class="p">:</span><span class="w"> </span><span class="mf">22000.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mf">2040.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"entertainment"</span><span class="p">:</span><span class="w"> </span><span class="mf">789.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mf">16000.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"debt12Months"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"Jan2018"</span><span class="p">:</span><span class="w"> </span><span class="mf">4520.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Dec2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">6010.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Nov2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">5005.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Oct2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6404.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Sept2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">3460.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Aug2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6600.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jul2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6540.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Jun2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5250.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"May2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6350.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Apr2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6100.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"March2017"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">5450.00</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"Feb2017"</span><span class="p">:</span><span class="w"> </span><span class="mf">6550.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"recurringExpense"</span><span class="p">:</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"publicService"</span><span class="p">:</span><span class="w"> </span><span class="mf">240.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"townGas"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">210</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"homeMtg"</span><span class="p">:</span><span class="w"> </span><span class="mf">3600.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mobilePhone"</span><span class="p">:</span><span class="w"> </span><span class="mf">169.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurance"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.00</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+ </span><span class="s2">"Predictions"</span><span class="p">:</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"nextWeekCashflow"</span><span class="p">:</span><span class="w"> </span><span class="mf">300.00</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"nextMontCashflow"</span><span class="p">:</span><span class="w"> </span><span class="mf">11300.00</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"nextWeekAccBal"</span><span class="p">:</span><span class="w"> </span><span class="mf">71000.00</span><span class="w">
+   </span><span class="s2">"nextMonthAccBal"</span><span class="p">:</span><span class="w"> </span><span class="mf">68000.00</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+ </span><span class="s2">"savingTips"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"You spending 7% more on car insurance"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Pay with your Amex 42000 when you dine out and get 2% cash back"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn't exist"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

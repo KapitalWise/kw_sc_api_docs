@@ -4,20 +4,34 @@ position: 7.0
 type: get
 description: Return an investment product based on the user's risk tolerence 
 parameters:
-  - name: questions
-    content: Set of questionIds
-  - name: answers
-    content: Set of answerIds based on the selection in the same order as answer Ids
+  - name: userId
+    content: The user for the fund is recommend 
+  - name: questionId
+    content: The Id of the question
+  - name: answerId
+    content: The selected answer Id
 content_markdown: |-
-  This call will return an investment fund based on the user's risk tolerence 
+  This call will return an investment fund based on the user's risk tolerance 
   {: .info }
-  Investment fund based on the user's risk tolerence
+  Investment fund based on the user's risk tolerance
 left_code_blocks:
   - code_block: |-
       $.get("http://api.kapitalwise.com/robo/recommend", { 
       "token": "YOUR_APP_KEY",
-      "questionIds":[1,2,3,4],
-      "answerIds": [2,3,1,4]
+      "userId":123,
+      "userResponses": [
+      {
+        "questionId": 1, 
+        "answerId": 1
+      },
+      {
+        "questionId": 2, 
+        "answerId": 3
+      }
+      {
+        "questionId": 3, 
+        "answerId": 4
+      }]
       }, function(data) {
         alert(data);
       });
@@ -28,14 +42,14 @@ right_code_blocks:
       {
         "id" : 123,
         "externalProductId" : "313",
-        "fund_name" : "ABSA SELECT EQUITY FUNDS",
-        "fund_code" : "ABSAEQTY",
-        "fund_factsheet" : "https://www.absainvestments.co.za/wealth-and-investment-management/e-docs/fund-fact-sheets/Absa%20Select%20Equity%20Fund.pdf",
-        "fund_info" : "High risk fund for investors who are not risk cautious. This fund is suitable for investors who seek long-term capital growth from equity exposure",
-        "fund_icon_url" : "https://image.ibb.co/b96EUa/Core.png",
+        "fundName" : "ABSA SELECT EQUITY FUNDS",
+        "fundCode" : "ABSAEQTY",
+        "fundFactsheet" : "https://www.absainvestments.co.za/wealth-and-investment-management/e-docs/fund-fact-sheets/Absa%20Select%20Equity%20Fund.pdf",
+        "fundInfo" : "High risk fund for investors who are not risk cautious. This fund is suitable for investors who seek long-term capital growth from equity exposure",
+        "fundIconUrl" : "https://image.ibb.co/b96EUa/Core.png",
         "symbol" : "ABSAEQTY",
         "cusip" : "008000AA7",
-        "fund_type" : "HightRisk"
+        "fundType" : "HighRisk"
       }
     title: Response
     language: json

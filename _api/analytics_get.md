@@ -1,13 +1,13 @@
 ---
 title: /analytics/:id
-position: 0.0
+position: 8.0
 type: get
 description: Get user's personal financial analytics
 parameters:
   - name:
     content:
 content_markdown: |-
-  Returns a specific book from your collection
+  The /analytics/:id endpoint allows developers to receive user financial analytics data for credit and depository-type Accounts. Analytics data is standardized across accounts. This API also provides predicted future cash flow and account balances for the user.
 left_code_blocks:
   - code_block: |-
       $.get("http://api.kapitalwise.com/analytics/3", {
@@ -118,7 +118,7 @@ right_code_blocks:
          "nextWeekAccBal": 71000.00
          "nextMonthAccBal": 68000.00
          },
-       "savingTips": ["You spending 7% more on car insurence", "Pay with your Amex 42000 when you dine out and get 2% cash back"]
+       "savingTips": ["You spending 7% more on car insurance", "Pay with your Amex 42000 when you dine out and get 2% cash back"]
       }
     title: Response
     language: json

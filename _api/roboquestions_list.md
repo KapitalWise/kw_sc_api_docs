@@ -43,12 +43,13 @@ right_code_blocks:
           {
           "id": 1,
           "type": "RADIO",
+          "category" : "RISK_TOLERANCE",
           "sno": 1,
           "text": "Compared to others, how do you rate your willingness to take financial risks?",
           "choices": [
             {
             "id": 1,
-            "choice": "Extremly Low",
+            "choice": "Extremely Low",
             "sno": 1
             },
             {
@@ -69,32 +70,37 @@ right_code_blocks:
           ]
           },
           {
-          "id": 2,
-          "type": "RADIO",
-          "sno": 1,
-          "text": "How easily do you adapt when things go wrong financially?",
-          "choices": [
-            {
-            "id": 1,
-            "choice": "Very difficult",
-            "sno": 1
-            },
-            {
             "id": 2,
-            "choice": "Reasonably difficult",
-            "sno": 2
-            },
-            {
-            "id": 3,
-            "choice": "Reasonably well",
-            "sno": 3
-            },
-            {
-            "id": 4,
-            "choice": "No problem",
-            "sno": 4
-            }
-          ]
+            "type": "RADIO",
+            "category": "TIME_HORIZON",
+            "sno": 1,
+            "text": "How easily do you adapt when things go wrong financially?",
+            "choices": [
+              {
+                "id": 1,
+                "choice": "Very difficult",
+                "score" : 1,
+                "sno": 1
+              },
+              {
+                "id": 2,
+                "choice": "Reasonably difficult",
+                "score" : 4,
+                "sno": 2
+              },
+              {
+                "id": 3,
+                "choice": "Reasonably well",
+                "score" : 5,
+                "sno": 3
+              },
+              {
+                "id": 4,
+                "choice": "No problem",
+                "score" : 8,
+                "sno": 4
+              }
+            ]
           }
           }
        ]
@@ -103,7 +109,7 @@ right_code_blocks:
   - code_block: |2-
       {
         "error": true,
-        "message": "Invalid offset"
+        "message": "Invalid offset/limit"
       }
     title: Error
     language: json
