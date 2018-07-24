@@ -35,7 +35,7 @@ right_code_blocks:
         "email": "john.doe@gmail.com",
         "subBackupWithld": "false",
         "phone":"+19143184030",
-        "strategies":[124,156]
+        "goalSubscriptions":[124,156]
       }
     title: Response
     language: json

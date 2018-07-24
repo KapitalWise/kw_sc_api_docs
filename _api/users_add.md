@@ -40,10 +40,10 @@ parameters:
     content: Is this user board member of a public listed company
 
 content_markdown: |-
-  The book will automatically be added to your reading list
+  The user will automatically be added and enabled
   {: .success}
 
-  Adds a book to your collection.
+  Adds a user to your collection.
 left_code_blocks:
   - code_block: |-
       $.post("http://api.kapitalwise.com/users/", {

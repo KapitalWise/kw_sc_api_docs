@@ -12,7 +12,7 @@ content_markdown: |-
   This call will return a maximum of 100 users
   {: .info }
 
-  Lists all the photos you have access to. You can paginate by using the parameters listed above.
+  Lists all the users in the system. You can paginate by using the parameters listed above.
 left_code_blocks:
   - code_block: |-
       $.get("http://api.kapitalwise.com/users/", { "token": "YOUR_APP_KEY"}, function(data) {
@@ -56,7 +56,7 @@ right_code_blocks:
         "email": "john.doe@gmail.com",
         "subBackupWithld": "false",
         "phone":"+19143184030",
-        "strategies":[124,156]
+        "goalSubscriptions":[124,156]
         },
         { 
         "id": 2,
@@ -74,7 +74,7 @@ right_code_blocks:
         "email": "elizabeth.hibbet@gmail.com",
         "subBackupWithld": "false",
         "phone":"+12019367778",
-        "strategies":[423,345]
+        "goalSubscriptions":[423,345]
         }
       ]
     title: Response
@@ -82,7 +82,7 @@ right_code_blocks:
   - code_block: |2-
       {
         "error": true,
-        "message": "Invalid offset"
+        "message": "Invalid offset/limit"
       }
     title: Error
     language: json
