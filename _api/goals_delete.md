@@ -1,17 +1,17 @@
 ---
-title: /strategies/:id
+title: /goals/:id
 position: 3.5
 type: delete
-description: Deletes a user
+description: Deletes a goal
 parameters:
   - name:
     content:
 content_markdown: |-
-  Deletes a book in your collection.
+  Deletes a goal from the database.
 left_code_blocks:
   - code_block: |-
       $.ajax({
-        "url": "http://api.kapitalwise.com/strategies/123",
+        "url": "http://api.kapitalwise.com/goals/123",
         "type": "DELETE",
         "data": {
           "token": "YOUR_APP_KEY"
@@ -26,14 +26,14 @@ right_code_blocks:
   - code_block: |2-
       {
         "id": 123,
-        "status": "deleted"
+        "status": "DELETED"
       }
     title: Response
     language: json
   - code_block: |2-
       {
         "error": true,
-        "message": "Strategy doesn't exist"
+        "message": "Goal doesn't exist"
       }
     title: Error
     language: json

@@ -149,72 +149,72 @@
 						</li>
 					
 						<li>
-							<a href="/#apistrategies_add">
-								/strategies
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apistrategies_get">
-								/strategies/:id
+							<a href="/#apigoals_list">
+								/goals
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apistrategies_update">
-								/strategies/:id
+							<a href="/#apigoals_add">
+								/goals
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apigoals_get">
+								/goals/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apigoals_update">
+								/goals/:id
 								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apistrategies_delete">
-								/strategies/:id
+							<a href="/#apigoals_delete">
+								/goals/:id
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiinvestments_add">
-								/investments
+							<a href="/#apigoalRecommendations_get">
+								/goalRecommendations
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apigoalSubscriptions_add">
+								/goalSubscriptions
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiinvestment_history_get">
-								/investment/:id/history
+							<a href="/#apigoalSubscriptions_get">
+								/goalSubscriptions/:id
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiinvestment_log_get">
-								/investment/:id/log
-								<span class="endpoint get"></span>
+							<a href="/#apigoalSubscriptions_update">
+								/goalSubscriptions/:id
+								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiroboquestions_list">
-								/robo/questions
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiroborecommendation_get">
-								/robo/recommend
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apianalytics_get">
-								/analytics/:id
-								<span class="endpoint get"></span>
+							<a href="/#apigoalSubscriptions_delete">
+								/goalSubscriptions/:id
+								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
@@ -332,13 +332,13 @@
 					
 						,
 						
-						"api-analytics-get": {
-							"id": "api-analytics-get",
-							"title": "/analytics/:id",
+						"api-goalrecommendations-get": {
+							"id": "api-goalrecommendations-get",
+							"title": "/goalRecommendations",
 							"category": "api",
-							"description": "Get user's personal financial analytics",
+							"description": "Recommend goals for a user",
 		  				"type": "get",
-							"url": "/#apianalytics_get",
+							"url": "/#apigoalRecommendations_get",
 							"content": ""
 						}
 						
@@ -349,47 +349,13 @@
 					
 						,
 						
-						"api-investment-history-get": {
-							"id": "api-investment-history-get",
-							"title": "/investment/:id/history",
+						"api-goalsubscriptions-add": {
+							"id": "api-goalsubscriptions-add",
+							"title": "/goalSubscriptions",
 							"category": "api",
-							"description": "Get the history of all investments",
-		  				"type": "get",
-							"url": "/#apiinvestment_history_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-investment-log-get": {
-							"id": "api-investment-log-get",
-							"title": "/investment/:id/log",
-							"category": "api",
-							"description": "Get the logs for an investment. The logs are transactions contributed to an investment, eg. the transactions we rounded-up to make an investment",
-		  				"type": "get",
-							"url": "/#apiinvestment_log_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-investments-add": {
-							"id": "api-investments-add",
-							"title": "/investments",
-							"category": "api",
-							"description": "Create Investment, called after the investment is settled with the broker dealer",
+							"description": "Create a goal Subscription",
 		  				"type": "post",
-							"url": "/#apiinvestments_add",
+							"url": "/#apigoalSubscriptions_add",
 							"content": ""
 						}
 						
@@ -400,64 +366,13 @@
 					
 						,
 						
-						"api-roboquestions-list": {
-							"id": "api-roboquestions-list",
-							"title": "/robo/questions",
+						"api-goalsubscriptions-delete": {
+							"id": "api-goalsubscriptions-delete",
+							"title": "/goalSubscriptions/:id",
 							"category": "api",
-							"description": "List all risk tolerance questions for the robo recommendation",
-		  				"type": "get",
-							"url": "/#apiroboquestions_list",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-roborecommendation-get": {
-							"id": "api-roborecommendation-get",
-							"title": "/robo/recommend",
-							"category": "api",
-							"description": "Return an investment product based on the user's risk tolerence",
-		  				"type": "get",
-							"url": "/#apiroborecommendation_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-strategies-add": {
-							"id": "api-strategies-add",
-							"title": "/strategies",
-							"category": "api",
-							"description": "Create investment strategy",
-		  				"type": "post",
-							"url": "/#apistrategies_add",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-strategies-delete": {
-							"id": "api-strategies-delete",
-							"title": "/strategies/:id",
-							"category": "api",
-							"description": "Deletes a user",
+							"description": "Deletes a goal subscription",
 		  				"type": "delete",
-							"url": "/#apistrategies_delete",
+							"url": "/#apigoalSubscriptions_delete",
 							"content": ""
 						}
 						
@@ -468,13 +383,13 @@
 					
 						,
 						
-						"api-strategies-get": {
-							"id": "api-strategies-get",
-							"title": "/strategies/:id",
+						"api-goalsubscriptions-get": {
+							"id": "api-goalsubscriptions-get",
+							"title": "/goalSubscriptions/:id",
 							"category": "api",
-							"description": "Get User",
+							"description": "Get a goal subscription",
 		  				"type": "get",
-							"url": "/#apistrategies_get",
+							"url": "/#apigoalSubscriptions_get",
 							"content": ""
 						}
 						
@@ -485,13 +400,98 @@
 					
 						,
 						
-						"api-strategies-update": {
-							"id": "api-strategies-update",
-							"title": "/strategies/:id",
+						"api-goalsubscriptions-update": {
+							"id": "api-goalsubscriptions-update",
+							"title": "/goalSubscriptions/:id",
 							"category": "api",
-							"description": "Update Book",
+							"description": "Update Goal Subscription",
 		  				"type": "put",
-							"url": "/#apistrategies_update",
+							"url": "/#apigoalSubscriptions_update",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-goals-add": {
+							"id": "api-goals-add",
+							"title": "/goals",
+							"category": "api",
+							"description": "Create a goal",
+		  				"type": "post",
+							"url": "/#apigoals_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-goals-delete": {
+							"id": "api-goals-delete",
+							"title": "/goals/:id",
+							"category": "api",
+							"description": "Deletes a goal",
+		  				"type": "delete",
+							"url": "/#apigoals_delete",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-goals-get": {
+							"id": "api-goals-get",
+							"title": "/goals/:id",
+							"category": "api",
+							"description": "Get a goal",
+		  				"type": "get",
+							"url": "/#apigoals_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-goals-list": {
+							"id": "api-goals-list",
+							"title": "/goals",
+							"category": "api",
+							"description": "List all Goals",
+		  				"type": "get",
+							"url": "/#apigoals_list",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-goals-update": {
+							"id": "api-goals-update",
+							"title": "/goals/:id",
+							"category": "api",
+							"description": "Update Goal",
+		  				"type": "put",
+							"url": "/#apigoals_update",
 							"content": ""
 						}
 						
