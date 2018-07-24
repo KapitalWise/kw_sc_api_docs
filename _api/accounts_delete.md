@@ -2,12 +2,12 @@
 title: /accounts/:id
 position: 2.5
 type: delete
-description: Deletes a user
+description: Deletes an account
 parameters:
   - name:
     content:
 content_markdown: |-
-  Deletes a book in your collection.
+  Deletes an account from the system
 left_code_blocks:
   - code_block: |-
       $.ajax({

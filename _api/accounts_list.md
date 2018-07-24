@@ -12,7 +12,7 @@ content_markdown: |-
   This call will return a maximum of 100 accounts
   {: .info }
 
-  Lists all the photos you have access to. You can paginate by using the parameters listed above.
+  Lists all the accounts in the system. You can paginate by using the parameters listed above.
 left_code_blocks:
   - code_block: |-
       $.get("http://api.kapitalwise.com/accounts/", { "token": "YOUR_APP_KEY"}, function(data) {
@@ -72,7 +72,7 @@ right_code_blocks:
   - code_block: |2-
       {
         "error": true,
-        "message": "Invalid offset"
+        "message": "Invalid offset/limit"
       }
     title: Error
     language: json

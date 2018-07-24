@@ -2,7 +2,7 @@
 title: /accounts/:id
 position: 2.4
 type: put
-description: Update Book
+description: Update account
 parameters:
   - name: userId
     content: The account owner. 
@@ -25,7 +25,7 @@ parameters:
   - name: memo
     content: The memo
 content_markdown: |-
-  Update an existing book in your collection.
+  Update an existing account.
 left_code_blocks:
   - code_block: |-
       $.ajax({
@@ -72,11 +72,6 @@ right_code_blocks:
       {
         "error": true,
         "message": "Invalid user"
-      }
-      {
-        "error": true,
-        "message": "Invalid score"
-      }"message": "Book doesn't exist"
       }
     title: Error
     language: json

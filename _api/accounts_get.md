@@ -7,7 +7,7 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  Returns a specific book from your collection
+  Returns a specific account
 left_code_blocks:
   - code_block: |-
       $.get("http://api.kapitalwise.com/accounts/5", {
