@@ -6,8 +6,8 @@ description: Create a goal Subscription
 parameters:
   - name: user
     content: User id of the subscriber
-  - name: goalRecommendation
-    content: The goal recommendation chosen by the user
+  - name: goalSuggestion
+    content: The goal suggestion chosen by the user
   - name: nudge
     content: Whether the user wants to be nudged for funding approval 
 
@@ -19,7 +19,7 @@ left_code_blocks:
   - code_block: |-
       $.post("http://api.kapitalwise.com/goalSubscriptions/", {
       "token": "YOUR_APP_KEY",
-      "goalRecommendation": "1",
+      "goalSuggestion": "1",
       "user": "1",
       "nudge": true
       }, function(data) {
@@ -31,10 +31,10 @@ right_code_blocks:
   - code_block: |-
       {
         "id": 3,
-        "goalRecommendation": 1,
+        "goalSuggestion": 1,
         "user": 1,
-        "goalAmount": 50,
-        "paidAmount": 0,
+        "target": 500,
+        "funded": 0,
         "startDate": "2018-07-17T18:30:00.000Z",
         "endDate": null,
         "nudge": true,
@@ -49,11 +49,11 @@ right_code_blocks:
       }
       {
         "error": true,
-        "message": "Goal recommendation doesn't exist"
+        "message": "Goal suggestion doesn't exist"
       }
       {
         "error": true,
-        "message": "Goal recommendation doesn't belong to this user"
+        "message": "Goal suggestion doesn't belong to this user"
       }
     title: Error
     language: json

@@ -1,17 +1,17 @@
 ---
-title: /goalRecommendations
+title: /goalSuggestions
 position: 4.1
 type: get
 description: Recommend goals for a user
 parameters:
-  - name: User
-    content: User for which the recommandation is to be made
+  - name: user
+    content: User for which the recommendation is to be made
 content_markdown: |-
   Returns a set of goal recommendations for the user
   {: .info}
 left_code_blocks:
   - code_block: |-
-      $.get("http://api.kapitalwise.com/goalRecommendations", {
+      $.get("http://api.kapitalwise.com/goalSuggestions", {
         token: "YOUR_APP_KEY",
       }, function(data) {
         alert(data);
@@ -29,7 +29,7 @@ right_code_blocks:
                 "iconUrl": null
                 },
             "user": 1,
-            "goalAmount": 3
+            "target": 100
         },
         {
             "id": 2,
@@ -40,7 +40,7 @@ right_code_blocks:
                 "iconUrl": null
             },
             "user": 1,
-            "goalAmount": 5
+            "target": 500
         }]
     title: Response
     language: json

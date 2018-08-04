@@ -21,10 +21,10 @@ right_code_blocks:
   - code_block: |2-
        {
         "id": 3,
-        "goalRecommendation": 1,
+        "goalSuggestion": 1,
         "user": 1,
-        "goalAmount": 50,
-        "paidAmount": 0,
+        "target": 400,
+        "funded": 60,
         "startDate": "2018-07-17T18:30:00.000Z",
         "endDate": null,
         "nudge": true,

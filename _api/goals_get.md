@@ -1,6 +1,6 @@
 ---
 title: /goals/:id
-position: 3.3
+position: 3.2
 type: get
 description: Get a goal
 parameters:
