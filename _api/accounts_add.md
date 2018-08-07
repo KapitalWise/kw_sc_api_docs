@@ -16,6 +16,8 @@ parameters:
     content: Account nick name
   - name: accountType
     content: Type of account. Checking, saving, credit etc.
+  - name: accountSubType
+    content: Sub type of account (Funding/None)
   - name: providerType
     content: The account data provider. Yodlee, Plaid or banks 
   - name: loginName
@@ -39,9 +41,11 @@ left_code_blocks:
         "accountNumber": "XXXX4230",
         "nickname" : "My Chase Saving",
         "accountType":  "Saving",
+        "accountSubType":  "FUNDING",
         "providerType":  "YODLEE",
         "loginName" :  "ydltestlogin",
-        "password":  "ydltestpassw"
+        "password":  "ydltestpassw",
+        "memo": "chase account"
       }, function(data) {
         alert(data);
       });
@@ -56,6 +60,7 @@ right_code_blocks:
         "accountNumber": "XXXX4230",
         "nickname" : "My Chase Saving",
         "accountType":  "Saving",
+        "accountSubType":  "FUNDING",
         "providerType":  "YODLEE",
         "loginName" :  "ydltestlogin",
         "password":  "ydltestpassword",

@@ -27,6 +27,7 @@ right_code_blocks:
         "accountNumber": "XXXX4230",
         "nickname" : "My Chase Saving",
         "accountType":  "Saving",
+        "accountSubType":  "FUNDING",
         "providerType":  "YODLEE",
         "loginName" :  "ydltestlogin",
         "password":  "ydltestpassword",
