@@ -4,6 +4,8 @@ position: 5.3
 type: put
 description: Update Goal Subscription
 parameters:
+  - name: description
+    content: User defined decription for the goal
   - name: target
     content: Target amount for the goal
   - name: status
@@ -32,15 +34,16 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |2-
       {
-        "id": 3,
+        "id": 5,
         "goalSuggestion": 1,
-        "user": 1,
-        "target": 700,
-        "funded": 100,
+        "description": "My Emergency Savings Goal",
+        "user": 201,
+        "target": 100,
+        "funded": 0,
         "startDate": "2018-07-17T18:30:00.000Z",
         "endDate": null,
-        "nudge": false,
-        "status": "PAUSE"
+        "nudge": true,
+        "status": "ACTIVE"
       }
     title: Response
     language: json

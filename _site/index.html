@@ -114,6 +114,34 @@
 						</li>
 					
 						<li>
+							<a href="#apigoalRecommendations_get">
+								/users/:id/goals
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apinudges_get">
+								/users/:id/nudges
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiproductPrediction_get">
+								/users/:id/products
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apicashflowPrediction_get">
+								/users/:id/cashflow
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="#apiaccounts_list">
 								/accounts
 								<span class="endpoint get"></span>
@@ -163,13 +191,6 @@
 						</li>
 					
 						<li>
-							<a href="#apigoalRecommendations_get">
-								/goalSuggestions
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
 							<a href="#apigoalSubscriptions_add">
 								/goalSubscriptions
 								<span class="endpoint post"></span>
@@ -194,6 +215,13 @@
 							<a href="#apigoalSubscriptions_delete">
 								/goalSubscriptions/:id
 								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apigoalFunding_post">
+								/goalSubscriptions/:id/fund
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -953,6 +981,362 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
+					<a id="apigoalRecommendations_get">
+						/users/:id/goals
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/goalRecommendations_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Recommend goals for a user</p>
+				
+				
+				
+
+				<p class="info">Returns a set of goal recommendations for the user</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/123/goals"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">[</span><span class="w">
+ </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emergency Savings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your recommended Emergency Savings is intended to help you prepare for unexpected expenses. Depending on the assets you've, we recommend having between 3-6 months of your annual household income set aside for emergencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paydown Credit Card Balance"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit card debt can put a serious drag on your net worth. If you have high interest credit card debt or several different credit card bills to pay every month, it can make a lot of sense to take advantage of a 0% APR balance transfer offer as well."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Goal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Persoanl goal to do something, get something or go somewhere "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not recommend any goal"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn</span><span class="se">\'</span><span class="s2">t exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apinudges_get">
+						/users/:id/nudges
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/nudges_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Return nudges(notifications) for a user</p>
+				
+				
+				
+
+				<p class="info">Returns a set of nudges for a user</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/123/nudges"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"goalSubscription"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fund your goal by the amount we predicted after analyzing your profile"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"predictedAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"predictedGoalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No nudges found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn</span><span class="se">\'</span><span class="s2">t exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiproductPrediction_get">
+						/users/:id/products
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/productPrediction_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Recommends products to the user</p>
+				
+				
+				
+
+				<p class="info">Returns a set of products users are likely to have in future</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/123/products"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No product recommendations found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn</span><span class="se">\'</span><span class="s2">t exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apicashflowPrediction_get">
+						/users/:id/cashflow
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/cashflowPrediction_get.md">Edit</a>
+				</h3>
+				
+					<p class="description">Predicts cashflow for a user</p>
+				
+				
+				
+
+				<p class="info">Returns the predicted future cashflow for a user</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/123/cashflow"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"recurringExpense"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"income"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"miscellaneousExpense"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"miscellaneousIncome"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"predictedAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"predictedGoalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"asOfDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-02T00:00:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No cashflow predictions found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn</span><span class="se">\'</span><span class="s2">t exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
 					<a id="apiaccounts_list">
 						/accounts
 						
@@ -1037,6 +1421,7 @@
   </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountSubType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"FUNDING"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
@@ -1050,6 +1435,7 @@
   </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4223"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Checking"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Checking"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountSubType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"FUNDING"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
@@ -1110,6 +1496,9 @@
 				            <dt>accountType</dt>
 				            <dd>Type of account. Checking, saving, credit etc.</dd>
 				        
+				            <dt>accountSubType</dt>
+				            <dd>Sub type of account (Funding/None)</dd>
+				        
 				            <dt>providerType</dt>
 				            <dd>The account data provider. Yodlee, Plaid or banks</dd>
 				        
@@ -1141,9 +1530,11 @@
   <span class="s2">"accountNumber"</span><span class="p">:</span> <span class="s2">"XXXX4230"</span><span class="p">,</span>
   <span class="s2">"nickname"</span> <span class="p">:</span> <span class="s2">"My Chase Saving"</span><span class="p">,</span>
   <span class="s2">"accountType"</span><span class="p">:</span>  <span class="s2">"Saving"</span><span class="p">,</span>
+  <span class="s2">"accountSubType"</span><span class="p">:</span>  <span class="s2">"FUNDING"</span><span class="p">,</span>
   <span class="s2">"providerType"</span><span class="p">:</span>  <span class="s2">"YODLEE"</span><span class="p">,</span>
   <span class="s2">"loginName"</span> <span class="p">:</span>  <span class="s2">"ydltestlogin"</span><span class="p">,</span>
-  <span class="s2">"password"</span><span class="p">:</span>  <span class="s2">"ydltestpassw"</span>
+  <span class="s2">"password"</span><span class="p">:</span>  <span class="s2">"ydltestpassw"</span><span class="p">,</span>
+  <span class="s2">"memo"</span><span class="p">:</span> <span class="s2">"chase account"</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
@@ -1165,6 +1556,7 @@
   </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountSubType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"FUNDING"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
@@ -1248,6 +1640,7 @@
   </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountSubType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"FUNDING"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
@@ -1311,6 +1704,9 @@
 				            <dt>accountType</dt>
 				            <dd>Type of account. Checking, saving, credit etc.</dd>
 				        
+				            <dt>accountSubType</dt>
+				            <dd>Sub type of account (Funding/None)</dd>
+				        
 				            <dt>providerType</dt>
 				            <dd>The account data provider. Yodlee, Plaid or banks</dd>
 				        
@@ -1345,8 +1741,10 @@
     <span class="s2">"accountNumber"</span><span class="p">:</span> <span class="s2">"XXXX4230"</span><span class="p">,</span>
     <span class="s2">"nickname"</span> <span class="p">:</span> <span class="s2">"My Chase Saving"</span><span class="p">,</span>
     <span class="s2">"accountType"</span><span class="p">:</span>  <span class="s2">"Saving"</span><span class="p">,</span>
+    <span class="s2">"accountSubType"</span><span class="p">:</span>  <span class="s2">"FUNDING"</span><span class="p">,</span>
     <span class="s2">"loginName"</span> <span class="p">:</span>  <span class="s2">"ydltestlogin"</span><span class="p">,</span>
-    <span class="s2">"password"</span><span class="p">:</span>  <span class="s2">"ydltestpassw"</span>
+    <span class="s2">"password"</span><span class="p">:</span>  <span class="s2">"ydltestpassw"</span><span class="p">,</span>
+    <span class="s2">"memo"</span><span class="p">:</span> <span class="s2">"chase account"</span>
   <span class="p">},</span>
   <span class="s2">"success"</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -1370,6 +1768,7 @@
   </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX4230"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"nickname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"My Chase Saving"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"Saving"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountSubType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"FUNDING"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"providerType"</span><span class="p">:</span><span class="w">  </span><span class="s2">"YODLEE"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"loginName"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestlogin"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w">  </span><span class="s2">"ydltestpassword"</span><span class="p">,</span><span class="w">
@@ -1517,19 +1916,19 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w"> 
- </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
- </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pay credit card bill"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a goal"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc.com/icon1"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emergency Savings"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your recommended Emergency Savings is intended to help you prepare for unexpected expenses. Depending on the assets you've, we recommend having between 3-6 months of your annual household income set aside for emergencies"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w"> 
- </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
- </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pay car loan"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a goal"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc.com/icon2"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paydown Credit Card Balance"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit card debt can put a serious drag on your net worth. If you have high interest credit card debt or several different credit card bills to pay every month, it can make a lot of sense to take advantage of a 0% APR balance transfer offer as well."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
@@ -1598,13 +1997,13 @@
 		    		    
 
 
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
- </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
- </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pay credit card bill"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a goal"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc.com/icon"</span><span class="p">,</span><span class="w">
- </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emergency Savings"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your recommended Emergency Savings is intended to help you prepare for unexpected expenses. Depending on the assets you've, we recommend having between 3-6 months of your annual household income set aside for emergencies"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 			    	
@@ -1614,94 +2013,6 @@
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Goal doesn't exist"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="apigoalRecommendations_get">
-						/goalSuggestions
-						
-							<span class="endpoint get"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/goalRecommendations_get.md">Edit</a>
-				</h3>
-				
-					<p class="description">Recommend goals for a user</p>
-				
-				
-				
-				    <h6>Parameters</h6>
-				    <dl>
-				        
-				            <dt>user</dt>
-				            <dd>User for which the recommendation is to be made</dd>
-				        
-				    </dl>
-				
-
-				<p class="info">Returns a set of goal recommendations for the user</p>
-
-				
-				
-				    
-				        
-
-
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/goalSuggestions"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-		            
-		        
-			</section>
-			
-			    <section class="right-code">
-	    			
-		    		    
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      	  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pay credit card bill"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      	  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pay house loan"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
-  </span><span class="p">}]</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-		    		    
-
-
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not recommend any goal"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1735,6 +2046,12 @@
 				            <dt>goalSuggestion</dt>
 				            <dd>The goal suggestion chosen by the user</dd>
 				        
+				            <dt>description</dt>
+				            <dd>User defined goal description</dd>
+				        
+				            <dt>target</dt>
+				            <dd>Target amount for the goal</dd>
+				        
 				            <dt>nudge</dt>
 				            <dd>Whether the user wants to be nudged for funding approval</dd>
 				        
@@ -1752,7 +2069,9 @@
 <div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/goalSubscriptions/"</span><span class="p">,</span> <span class="p">{</span>
 <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
 <span class="s2">"goalSuggestion"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
-<span class="s2">"user"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+<span class="s2">"user"</span><span class="p">:</span> <span class="s2">"201"</span><span class="p">,</span>
+<span class="s2">"description"</span><span class="p">:</span> <span class="s2">"My Emergency Savings Goal"</span><span class="p">,</span>
+<span class="s2">"target"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
 <span class="s2">"nudge"</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -1769,10 +2088,11 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
   </span><span class="s2">"goalSuggestion"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Emergency Savings Goal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
   </span><span class="s2">"funded"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-17T18:30:00.000Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1796,6 +2116,10 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Goal suggestion doesn't belong to this user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1845,12 +2169,13 @@
 		    		    
 
 
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
   </span><span class="s2">"goalSuggestion"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"funded"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Emergency Savings Goal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"funded"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-17T18:30:00.000Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"nudge"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -1891,6 +2216,9 @@
 				
 				    <h6>Parameters</h6>
 				    <dl>
+				        
+				            <dt>description</dt>
+				            <dd>User defined decription for the goal</dd>
 				        
 				            <dt>target</dt>
 				            <dd>Target amount for the goal</dd>
@@ -1937,15 +2265,16 @@
 
 
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
   </span><span class="s2">"goalSuggestion"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"funded"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Emergency Savings Goal"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"funded"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-17T18:30:00.000Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"nudge"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAUSE"</span><span class="w">
+  </span><span class="s2">"nudge"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2031,6 +2360,88 @@
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Goal subscription doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apigoalFunding_post">
+						/goalSubscriptions/:id/fund
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/goalFunding_post.md">Edit</a>
+				</h3>
+				
+					<p class="description">Fund the goal to meet the target</p>
+				
+				
+				
+				    <h6>Parameters</h6>
+				    <dl>
+				        
+				            <dt>approvedGoalFunding</dt>
+				            <dd>Goal funding amount approved by user</dd>
+				        
+				    </dl>
+				
+
+				<p class="success">Fund the goal to meet the target</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/goalSubscriptions/5/fund"</span><span class="p">,</span> <span class="p">{</span>
+<span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="s2">"approvedGoalFunding"</span><span class="p">:</span> <span class="s2">"10"</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="s2">"goalSubscription"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+</span><span class="s2">"approvedGoalFunding"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+</span><span class="s2">"asOfDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-03T09:03:18.593Z"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OPEN"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Goal subscription doesn't exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

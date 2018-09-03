@@ -114,6 +114,34 @@
 						</li>
 					
 						<li>
+							<a href="/#apigoalRecommendations_get">
+								/users/:id/goals
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apinudges_get">
+								/users/:id/nudges
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiproductPrediction_get">
+								/users/:id/products
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apicashflowPrediction_get">
+								/users/:id/cashflow
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#apiaccounts_list">
 								/accounts
 								<span class="endpoint get"></span>
@@ -163,13 +191,6 @@
 						</li>
 					
 						<li>
-							<a href="/#apigoalRecommendations_get">
-								/goalSuggestions
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
 							<a href="/#apigoalSubscriptions_add">
 								/goalSubscriptions
 								<span class="endpoint post"></span>
@@ -194,6 +215,13 @@
 							<a href="/#apigoalSubscriptions_delete">
 								/goalSubscriptions/:id
 								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apigoalFunding_post">
+								/goalSubscriptions/:id/fund
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -311,9 +339,43 @@
 					
 						,
 						
+						"api-cashflowprediction-get": {
+							"id": "api-cashflowprediction-get",
+							"title": "/users/:id/cashflow",
+							"category": "api",
+							"description": "Predicts cashflow for a user",
+		  				"type": "get",
+							"url": "/#apicashflowPrediction_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-goalfunding-post": {
+							"id": "api-goalfunding-post",
+							"title": "/goalSubscriptions/:id/fund",
+							"category": "api",
+							"description": "Fund the goal to meet the target",
+		  				"type": "post",
+							"url": "/#apigoalFunding_post",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
 						"api-goalrecommendations-get": {
 							"id": "api-goalrecommendations-get",
-							"title": "/goalSuggestions",
+							"title": "/users/:id/goals",
 							"category": "api",
 							"description": "Recommend goals for a user",
 		  				"type": "get",
@@ -420,6 +482,40 @@
 							"description": "List all Goals",
 		  				"type": "get",
 							"url": "/#apigoals_list",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-nudges-get": {
+							"id": "api-nudges-get",
+							"title": "/users/:id/nudges",
+							"category": "api",
+							"description": "Return nudges(notifications) for a user",
+		  				"type": "get",
+							"url": "/#apinudges_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-productprediction-get": {
+							"id": "api-productprediction-get",
+							"title": "/users/:id/products",
+							"category": "api",
+							"description": "Recommends products to the user",
+		  				"type": "get",
+							"url": "/#apiproductPrediction_get",
 							"content": ""
 						}
 						

@@ -19,13 +19,13 @@ left_code_blocks:
     language: javascript
 right_code_blocks:
   - code_block: |2-
-       {
-       "id": 1,
-       "name": "Pay credit card bill",
-       "description": "this is a goal",
-       "iconUrl": "abc.com/icon",
-       "status": "ACTIVE"
-      }
+        {
+        "id": 1,
+        "name": "Emergency Savings",
+        "description": "Your recommended Emergency Savings is intended to help you prepare for unexpected expenses. Depending on the assets you've, we recommend having between 3-6 months of your annual household income set aside for emergencies",
+        "iconUrl": null,
+        "status": "ACTIVE"
+        }
     title: Response
     language: json
   - code_block: |2-

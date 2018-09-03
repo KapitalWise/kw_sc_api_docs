@@ -24,19 +24,19 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |2-
       [
-        { 
-       "id": 1,
-       "name": "Pay credit card bill",
-       "description": "this is a goal",
-       "iconUrl": "abc.com/icon1",
-       "status": "ACTIVE"
+        {
+        "id": 1,
+        "name": "Emergency Savings",
+        "description": "Your recommended Emergency Savings is intended to help you prepare for unexpected expenses. Depending on the assets you've, we recommend having between 3-6 months of your annual household income set aside for emergencies",
+        "iconUrl": null,
+        "status": "ACTIVE"
         },
-        { 
-       "id": 2,
-       "name": "Pay car loan",
-       "description": "this is a goal",
-       "iconUrl": "abc.com/icon2",
-       "status": "ACTIVE"
+        {
+        "id": 2,
+        "name": "Paydown Credit Card Balance",
+        "description": "Credit card debt can put a serious drag on your net worth. If you have high interest credit card debt or several different credit card bills to pay every month, it can make a lot of sense to take advantage of a 0% APR balance transfer offer as well.",
+        "iconUrl": null,
+        "status": "ACTIVE"
         }
       ]
     title: Response
