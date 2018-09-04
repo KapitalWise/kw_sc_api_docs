@@ -18,22 +18,38 @@ left_code_blocks:
     language: javascript
 right_code_blocks:
   - code_block: |2-
+       [
         {
-        "user": 201,
-        "products": [
-            {
-            "id": 3,
-            "rank": 3
-            },
-            {
-            "id": 7,
-            "rank": 1
-            },
-            {
-            "id": 9,
-            "rank": 2
-            }]
+         "id": 1,
+         "user": 1612,
+         "product": {
+            "id": 1,
+            "name": "savings_account",
+            "description": null
+          },
+         "rank": 2
+        },
+        {
+         "id": 2,
+         "user": 1612,
+         "product": {
+            "id": 5,
+            "name": "payroll_account",
+            "description": null
+         },
+         "rank": 1
+        },
+        {
+         "id": 2,
+         "user": 1612,
+         "product": {
+            "id": 15,
+            "name": "tax_savings",
+            "description": null
+         },
+         "rank": 3
         }
+       ]
 
     title: Response
     language: json

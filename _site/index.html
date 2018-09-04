@@ -1030,7 +1030,8 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
   </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1042,7 +1043,8 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
   </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -1054,7 +1056,8 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
   </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isDefault"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
@@ -1208,22 +1211,38 @@
 		    		    
 
 
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-      </span><span class="p">}]</span><span class="w">
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1612</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"savings_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1612</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payroll_account"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">1612</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tax_savings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
   </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 			    	

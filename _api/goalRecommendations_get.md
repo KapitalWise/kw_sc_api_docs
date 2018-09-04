@@ -29,7 +29,8 @@ right_code_blocks:
         },
         "user": 201,
         "target": 200,
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "isDefault": false
         },
         {
         "id": 2,
@@ -41,7 +42,8 @@ right_code_blocks:
         },
         "user": 201,
         "target": 500,
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "isDefault": false
         },
         {
         "id": 3,
@@ -53,7 +55,8 @@ right_code_blocks:
         },
         "user": 201,
         "target": 0,
-        "status": "DEFAULT"
+        "status": "ACTIVE",
+        "isDefault": true
         }
         ]
 
