@@ -26,6 +26,7 @@ right_code_blocks:
         "user": 201,
         "target": 100,
         "funded": 0,
+        "pending": 12,
         "startDate": "2018-07-17T18:30:00.000Z",
         "endDate": null,
         "nudge": true,
