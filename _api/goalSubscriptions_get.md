@@ -21,12 +21,12 @@ right_code_blocks:
   - code_block: |2-
       {
         "id": 5,
-        "goalSuggestion": 1,
+        "goalSuggestion": 101,
         "description": "My Emergency Savings Goal",
         "user": 201,
-        "target": 100,
-        "funded": 0,
-        "pending": 12,
+        "target": 22000.00,
+        "funded": 1020.00,
+        "pending": 20980.00,
         "startDate": "2018-07-17T18:30:00.000Z",
         "endDate": null,
         "nudge": true,

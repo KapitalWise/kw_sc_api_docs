@@ -5,7 +5,7 @@ type: get
 description: Recommends products to the user
 parameters:
 content_markdown: |-
-  Returns a set of products users are likely to have in future
+  Returns a set of products or services that the user might be interested in. 
   {: .info}
 left_code_blocks:
   - code_block: |-
@@ -24,7 +24,7 @@ right_code_blocks:
          "user": 1612,
          "product": {
             "id": 1,
-            "name": "savings_account",
+            "name": "Certificates of deposit",
             "description": null
           },
          "rank": 2
@@ -34,7 +34,7 @@ right_code_blocks:
          "user": 1612,
          "product": {
             "id": 5,
-            "name": "payroll_account",
+            "name": "Travel rewards credit card",
             "description": null
          },
          "rank": 1
@@ -44,7 +44,7 @@ right_code_blocks:
          "user": 1612,
          "product": {
             "id": 15,
-            "name": "tax_savings",
+            "name": "Roth IRA Account",
             "description": null
          },
          "rank": 3

@@ -5,8 +5,7 @@ type: get
 description: Return nudges(notifications) for a user
 parameters:
 content_markdown: |-
-  Returns a set of nudges for a user
-  {: .info}
+  Returns a set of nudges for the user based on cashflow/balance/income predictions. Nudges are messages that would guide users to achieve a financial goal.
 left_code_blocks:
   - code_block: |-
       $.get("http://api.kapitalwise.com/users/123/nudges", {
@@ -23,10 +22,10 @@ right_code_blocks:
         "id": 1,
         "user": 201,
         "goalSubscription": 5,
-        "description": "Fund your goal by the amount we predicted after analyzing your profile",
-        "accountBalance": 100,
-        "predictedAccountBalance": 120,
-        "predictedGoalFunding": 10
+        "description": "You have $150 extra this week in account ending [2004]. Would you like to move it to savings?",
+        "accountBalance": 12300.00,
+        "predictedAccountBalance": 14300.00,
+        "predictedGoalFunding": 150.00
         }
         ]
 

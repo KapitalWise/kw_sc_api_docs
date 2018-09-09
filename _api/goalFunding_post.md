@@ -4,9 +4,8 @@ position: 5.5
 type: post
 description: Fund the goal to meet the target
 parameters:
-  - name: approvedGoalFunding
+  - name: amount
     content: Goal funding amount approved by user
-
 content_markdown: |-
   Fund the goal to meet the target
   {: .success}
@@ -15,7 +14,7 @@ left_code_blocks:
   - code_block: |-
       $.post("http://api.kapitalwise.com/goalSubscriptions/5/fund", {
       "token": "YOUR_APP_KEY",
-      "approvedGoalFunding": "10"
+      "amount": "150.00"
       }, function(data) {
         alert(data);
       });
@@ -26,8 +25,7 @@ right_code_blocks:
         {
         "id": 1,
         "goalSubscription": 5,
-        "approvedGoalFunding": 10,
-        "asOfDate": "2018-09-03T09:03:18.593Z",
+        "amount": 120.00,
         "status": "OPEN"
         }
 

@@ -26,7 +26,7 @@ left_code_blocks:
       "goalSuggestion": "1",
       "user": "201",
       "description": "My Emergency Savings Goal",
-      "target": 100,
+      "target": 22000.00,
       "nudge": true
       }, function(data) {
         alert(data);
@@ -40,8 +40,7 @@ right_code_blocks:
         "goalSuggestion": 1,
         "description": "My Emergency Savings Goal",
         "user": 201,
-        "target": 100,
-        "funded": 0,
+        "target": 22000.00,
         "startDate": "2018-07-17T18:30:00.000Z",
         "endDate": null,
         "nudge": true,

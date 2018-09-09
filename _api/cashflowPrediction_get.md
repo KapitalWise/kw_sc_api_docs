@@ -5,7 +5,7 @@ type: get
 description: Predicts cashflow for a user
 parameters:
 content_markdown: |-
-  Returns the predicted future cashflow for all the accounts of the user
+  Returns the predicted future income, account balance, expenses, recurring expenses, miscellaneous expense for each of the accounts for a user
   {: .info}
 left_code_blocks:
   - code_block: |-
@@ -21,12 +21,13 @@ right_code_blocks:
         [{
          "id": 1,
          "user": 201,
-         "account": 652
-         "recurringExpense": 50,
-         "income": 150,
-         "miscellaneousExpense": 30,
-         "miscellaneousIncome": 50,
-         "predictedAccountBalance": 120,
+         "account": 6520,
+         "accountBalance": 22345.00,
+         "recurringExpense": 1850.00,
+         "income": 9800.00,
+         "miscellaneousExpense": 630.00,
+         "miscellaneousIncome": 120.00,
+         "predictedAccountBalance": 24560.00,
          "predictedFunding": 10,
          "asOfDate": "2018-09-02T00:00:00.000Z"
         },
@@ -34,12 +35,13 @@ right_code_blocks:
          "id": 2,
          "user": 201,
          "account": 653
-         "recurringExpense": 7860,
-         "income": 11147,
-         "miscellaneousExpense": 4735,
-         "miscellaneousIncome": 1945,
-         "predictedAccountBalance": 53657,
-         "predictedFunding": 544,
+         "accountBalance": 12000.00,
+         "recurringExpense": 0.00,
+         "income": 0.00,
+         "miscellaneousExpense": 0.00,
+         "miscellaneousIncome": 0.00,
+         "predictedAccountBalance": 12000,
+         "predictedFunding": 0.00,
          "asOfDate": "2018-09-02T00:00:00.000Z"
         }]
         
