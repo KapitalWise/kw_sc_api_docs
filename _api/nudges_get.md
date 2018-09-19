@@ -18,15 +18,50 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |2-
         [
-        {
-        "id": 1,
-        "user": 201,
-        "goalSubscription": 5,
-        "description": "You have $150 extra this week in account ending [2004]. Would you like to move it to savings?",
-        "accountBalance": 12300.00,
-        "predictedAccountBalance": 14300.00,
-        "predictedGoalFunding": 150.00
-        }
+         {
+          "id": 4,
+          "user": 8,
+          "goalSubscription":
+            {
+             "id": 8,
+             "description": "My Custom Description",
+             "goalAmount": 100,
+             "paidAmount": 0,
+             "startDate": "2018-09-09T18:30:00.000Z",
+             "endDate": null,
+             "nudge": true,
+             "status": "ACTIVE",
+             "goalRecommendation": 2,
+             "user": 8,
+             "goalAccount": 1300
+            },
+           "description": "You will have $537 extra this week in account ending 2400. Would you like to move it to your Goal?",
+           "accountBalance": 3353,
+           "predictedAccountBalance": 53657,
+           "predictedGoalFunding": 537
+          },
+          {
+           "id": 5,
+           "user": 8,
+           "goalSubscription":
+            {
+             "id": 8,
+             "description": "My Custom Description",
+             "goalAmount": 100,
+             "paidAmount": 0,
+             "startDate": "2018-09-09T18:30:00.000Z",
+             "endDate": null,
+             "nudge": true,
+             "status": "ACTIVE",
+             "goalRecommendation": 2,
+             "user": 8,
+             "goalAccount": 1300
+            },
+           "description": "You will have $9 extra this week in account ending 2401. Would you like to move it to your Goal?",
+           "accountBalance": 3525,
+           "predictedAccountBalance": 941,
+           "predictedGoalFunding": 9
+          }
         ]
 
     title: Response

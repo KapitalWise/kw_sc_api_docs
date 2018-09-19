@@ -6,6 +6,8 @@ description: Fund the goal to meet the target
 parameters:
   - name: amount
     content: Goal funding amount approved by user
+  - name: nudgeId
+    content: Id of nudge to which user has responded by approving the funding amount
 content_markdown: |-
   Fund the goal to meet the target
   {: .success}
@@ -14,7 +16,8 @@ left_code_blocks:
   - code_block: |-
       $.post("http://api.kapitalwise.com/goalSubscriptions/5/fund", {
       "token": "YOUR_APP_KEY",
-      "amount": "150.00"
+      "amount": "120.00",
+      "nudgeId": "12"
       }, function(data) {
         alert(data);
       });

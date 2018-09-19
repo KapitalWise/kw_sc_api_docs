@@ -21,7 +21,12 @@ right_code_blocks:
         [{
          "id": 1,
          "user": 201,
-         "account": 6520,
+         "account":
+          {
+           "id": 652,
+           "accountNumber": "2400",
+           "accountType": "checking"
+          },
          "accountBalance": 22345.00,
          "recurringExpense": 1850.00,
          "income": 9800.00,
@@ -34,7 +39,12 @@ right_code_blocks:
         {
          "id": 2,
          "user": 201,
-         "account": 653
+         "account":
+          {
+           "id": 653,
+           "accountNumber": "2401",
+           "accountType": "checking"
+          },
          "accountBalance": 12000.00,
          "recurringExpense": 0.00,
          "income": 0.00,
