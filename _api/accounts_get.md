@@ -2,7 +2,7 @@
 title: /accounts/:id
 position: 2.3
 type: get
-description: Get User
+description: Get Account
 parameters:
   - name:
     content:
@@ -31,7 +31,8 @@ right_code_blocks:
         "providerType":  "YODLEE",
         "loginName" :  "ydltestlogin",
         "password":  "ydltestpassword",
-        "memo":  "Test memo"
+        "memo":  "Test memo",
+        "status": "ACTIVE"
       }
     title: Response
     language: json

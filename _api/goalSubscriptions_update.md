@@ -12,16 +12,18 @@ parameters:
     content: ACTIVE/PAUSE
   - name: nudge
     content: Whether the user wants to be nudged for funding approval
+  - name: goalPreferences
+    content: An array of user goal preference objects containing 'keyName' and 'value' 
 content_markdown: |-
   Update an existing goal subscription in the database.
 left_code_blocks:
   - code_block: |-
       $.ajax({
-        "url": "http://api.kapitalwise.com/goalSubscriptions/3",
+        "url": "http://api.kapitalwise.com/goalSubscriptions/5",
         "type": "PUT",
         "data": {
           "token": "YOUR_APP_KEY",
-          "target": 17000.00,
+          "target": 22000.00,
           "status": "PAUSE",
           "nudge": false
         },
@@ -40,9 +42,8 @@ right_code_blocks:
         "user": 201,
         "target": 22000.00,
         "startDate": "2018-07-17T18:30:00.000Z",
-        "endDate": null,
-        "nudge": true,
-        "status": "ACTIVE"
+        "endDate": null
+        "status": "PAUSE"
       }
     title: Response
     language: json

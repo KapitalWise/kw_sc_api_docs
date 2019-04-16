@@ -12,8 +12,8 @@ parameters:
     content: User defined goal description
   - name: target
     content: Target amount for the goal
-  - name: nudge
-    content: Whether the user wants to be nudged for funding approval 
+  - name: goalPreferences
+    content: An array of user goal preference objects containing 'keyName' and 'value' 
 
 content_markdown: |-
   Lets User subscribe to a Goal.
@@ -27,7 +27,7 @@ left_code_blocks:
       "user": "201",
       "description": "My Emergency Savings Goal",
       "target": 22000.00,
-      "nudge": true
+      "goalPreferences": [{"keyName": "ROUNDUP", "value": 100}]
       }, function(data) {
         alert(data);
       });
@@ -42,8 +42,7 @@ right_code_blocks:
         "user": 201,
         "target": 22000.00,
         "startDate": "2018-07-17T18:30:00.000Z",
-        "endDate": null,
-        "nudge": true,
+        "endDate": null
         "status": "ACTIVE"
       }
     title: Response
@@ -64,6 +63,10 @@ right_code_blocks:
       {
         "error": true,
         "message": "Something went wrong on server-side"
+      }
+      {
+        "error": true,
+        "message": "Rule doesn\'t exist"
       }
     title: Error
     language: json

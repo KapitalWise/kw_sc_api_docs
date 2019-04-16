@@ -52,7 +52,8 @@ right_code_blocks:
         "providerType":  "YODLEE",
         "loginName" :  "ydltestlogin",
         "password":  "ydltestpassword",
-        "memo":  "Test memo"
+        "memo":  "Test memo",
+        "status": "ACTIVE"
       },
       {
         "id": 4,
@@ -66,7 +67,8 @@ right_code_blocks:
         "providerType":  "YODLEE",
         "loginName" :  "ydltestlogin",
         "password":  "ydltestpassword",
-        "memo":  "Test memo"
+        "memo":  "Test memo",
+        "status": "ACTIVE"
       },
       ]
     title: Response

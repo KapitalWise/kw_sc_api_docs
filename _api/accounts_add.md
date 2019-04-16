@@ -64,7 +64,8 @@ right_code_blocks:
         "providerType":  "YODLEE",
         "loginName" :  "ydltestlogin",
         "password":  "ydltestpassword",
-        "memo":  "Test memo"
+        "memo":  "Test memo",
+        "status": "ACTIVE"
       }
     title: Response
     language: json

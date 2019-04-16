@@ -84,7 +84,10 @@ right_code_blocks:
         "boardMember": "false",
         "email": "john.doe@gmail.com",
         "subBackupWithld": "false",
-        "phone":"+19143184030"
+        "phone":"+19143184030",
+        "finWellScore": null,
+        "goalSubscriptions":[{"id":1, "status": "ACTIVE"}],
+        "accounts": [1, 2, 3]
       }
     title: Response
     language: json

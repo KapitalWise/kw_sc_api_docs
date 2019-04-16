@@ -41,7 +41,7 @@ right_code_blocks:
   - code_block: |2-
       [
         { 
-        "id": 1,
+        "id": 3,
         "dateOfBirth": "05/28/1988",
         "state": "NY",
         "lastName": "John",
@@ -56,25 +56,29 @@ right_code_blocks:
         "email": "john.doe@gmail.com",
         "subBackupWithld": "false",
         "phone":"+19143184030",
-        "goalSubscriptions":[124,156]
+        "finWellScore": null,
+        "goalSubscriptions":[{"id":1, "status": "ACTIVE"}],
+        "accounts": [1, 2, 3]]
         },
         { 
-        "id": 2,
-        "dateOfBirth": "07/18/1982",
+        "id": 4,
+        "dateOfBirth": "05/28/1988",
         "state": "NY",
-        "lastName": "Elizabeth",
-        "firstName": "Hibbett ",
-        "address1": "65",
+        "lastName": "John",
+        "firstName": "Doe",
+        "address1": "43",
         "zip": "10010",
-        "address2": "James Street",
+        "address2": "W 23rd Street",
         "usResident": "true",
-        "city": "Yonkers",
+        "city": "New York",
         "brokerDealerAff": "false",
         "boardMember": "false",
-        "email": "elizabeth.hibbet@gmail.com",
+        "email": "john.cena@gmail.com",
         "subBackupWithld": "false",
-        "phone":"+12019367778",
-        "goalSubscriptions":[423,345]
+        "phone":"+19143184030",
+        "finWellScore": null,
+        "goalSubscriptions":[{"id":2, "status": "ACTIVE"}],
+        "accounts": [4, 5, 6]
         }
       ]
     title: Response

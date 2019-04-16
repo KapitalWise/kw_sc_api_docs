@@ -79,6 +79,13 @@
 					
 					
 						<li>
+							<a href="/#apiusers_link_to_digit">
+								/users/digit
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#apiusers_list">
 								/users
 								<span class="endpoint get"></span>
@@ -114,6 +121,13 @@
 						</li>
 					
 						<li>
+							<a href="/#apiusers_get_by_email">
+								/users/email
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#apigoalRecommendations_get">
 								/users/:id/goals
 								<span class="endpoint get"></span>
@@ -121,30 +135,9 @@
 						</li>
 					
 						<li>
-							<a href="/#apinudges_get">
-								/users/:id/nudges
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiproductPrediction_get">
-								/users/:id/products
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apicashflowPrediction_get">
-								/users/:id/cashflow
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apinudges_delete">
-								/nudges/:id
-								<span class="endpoint delete"></span>
+							<a href="/#apiusers_add_device">
+								/users/:id/device
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -180,6 +173,13 @@
 							<a href="/#apiaccounts_delete">
 								/accounts/:id
 								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiaccounts_get_transactions">
+								/accounts/:id/transactions
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -226,9 +226,16 @@
 						</li>
 					
 						<li>
-							<a href="/#apigoalFunding_post">
-								/goalSubscriptions/:id/fund
-								<span class="endpoint post"></span>
+							<a href="/#apigoalSubscriptions_get_transactions">
+								/goalSubscriptions/:id/transactions
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apigoalSubscriptions_get_history">
+								/goalSubscriptions/:id/history
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -299,9 +306,26 @@
 							"id": "api-accounts-get",
 							"title": "/accounts/:id",
 							"category": "api",
-							"description": "Get User",
+							"description": "Get Account",
 		  				"type": "get",
 							"url": "/#apiaccounts_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-accounts-get-transactions": {
+							"id": "api-accounts-get-transactions",
+							"title": "/accounts/:id/transactions",
+							"category": "api",
+							"description": "Get Transactions of an account",
+		  				"type": "get",
+							"url": "/#apiaccounts_get_transactions",
 							"content": ""
 						}
 						
@@ -336,40 +360,6 @@
 							"description": "Update account",
 		  				"type": "put",
 							"url": "/#apiaccounts_update",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-cashflowprediction-get": {
-							"id": "api-cashflowprediction-get",
-							"title": "/users/:id/cashflow",
-							"category": "api",
-							"description": "Predicts cashflow for a user",
-		  				"type": "get",
-							"url": "/#apicashflowPrediction_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-goalfunding-post": {
-							"id": "api-goalfunding-post",
-							"title": "/goalSubscriptions/:id/fund",
-							"category": "api",
-							"description": "Fund the goal to meet the target",
-		  				"type": "post",
-							"url": "/#apigoalFunding_post",
 							"content": ""
 						}
 						
@@ -448,6 +438,40 @@
 					
 						,
 						
+						"api-goalsubscriptions-get-history": {
+							"id": "api-goalsubscriptions-get-history",
+							"title": "/goalSubscriptions/:id/history",
+							"category": "api",
+							"description": "Get funding history for the goal",
+		  				"type": "get",
+							"url": "/#apigoalSubscriptions_get_history",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-goalsubscriptions-get-transactions": {
+							"id": "api-goalsubscriptions-get-transactions",
+							"title": "/goalSubscriptions/:id/transactions",
+							"category": "api",
+							"description": "Get transaction logs which contributed to this goal",
+		  				"type": "get",
+							"url": "/#apigoalSubscriptions_get_transactions",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
 						"api-goalsubscriptions-update": {
 							"id": "api-goalsubscriptions-update",
 							"title": "/goalSubscriptions/:id",
@@ -499,57 +523,6 @@
 					
 						,
 						
-						"api-nudges-delete": {
-							"id": "api-nudges-delete",
-							"title": "/nudges/:id",
-							"category": "api",
-							"description": "Deletes a nudge",
-		  				"type": "delete",
-							"url": "/#apinudges_delete",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-nudges-get": {
-							"id": "api-nudges-get",
-							"title": "/users/:id/nudges",
-							"category": "api",
-							"description": "Return nudges(notifications) for a user",
-		  				"type": "get",
-							"url": "/#apinudges_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-productprediction-get": {
-							"id": "api-productprediction-get",
-							"title": "/users/:id/products",
-							"category": "api",
-							"description": "Recommends products to the user",
-		  				"type": "get",
-							"url": "/#apiproductPrediction_get",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
 						"api-users-add": {
 							"id": "api-users-add",
 							"title": "/users",
@@ -557,6 +530,23 @@
 							"description": "Create User",
 		  				"type": "post",
 							"url": "/#apiusers_add",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-add-device": {
+							"id": "api-users-add-device",
+							"title": "/users/:id/device",
+							"category": "api",
+							"description": "Adds a device to user",
+		  				"type": "post",
+							"url": "/#apiusers_add_device",
 							"content": ""
 						}
 						
@@ -591,6 +581,40 @@
 							"description": "Get User",
 		  				"type": "get",
 							"url": "/#apiusers_get",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-get-by-email": {
+							"id": "api-users-get-by-email",
+							"title": "/users/email",
+							"category": "api",
+							"description": "Get User",
+		  				"type": "get",
+							"url": "/#apiusers_get_by_email",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-link-to-digit": {
+							"id": "api-users-link-to-digit",
+							"title": "/users/digit",
+							"category": "api",
+							"description": "Link user to Digit Platform",
+		  				"type": "post",
+							"url": "/#apiusers_link_to_digit",
 							"content": ""
 						}
 						
