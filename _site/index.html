@@ -239,6 +239,13 @@
 							</a>
 						</li>
 					
+						<li>
+							<a href="#apinotifications_post">
+								/notifications
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -2683,6 +2690,106 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No history of funding found"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apinotifications_post">
+						/notifications
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/notifications_post.md">Edit</a>
+				</h3>
+				
+					<p class="description">Send a notification request to APNs</p>
+				
+				
+				
+				    <h6>Parameters</h6>
+				    <dl>
+				        
+				            <dt>user</dt>
+				            <dd>User id</dd>
+				        
+				            <dt>data</dt>
+				            <dd>Data object to be sent as notification {has two keys value pair, 'aps' (as per APNs spec) and 'payload' (Any extra info other than aps)}</dd>
+				        
+				    </dl>
+				
+
+				
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/notifications"</span><span class="p">,</span> <span class="p">{</span>
+<span class="s2">"user"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+<span class="s2">"data"</span> <span class="p">:</span> <span class="p">{</span>
+  <span class="s2">"aps"</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">"alert"</span> <span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"title"</span> <span class="p">:</span> <span class="s2">"Game Request"</span><span class="p">,</span>
+          <span class="s2">"subtitle"</span> <span class="p">:</span> <span class="s2">"Five Card Draw"</span><span class="p">,</span>
+          <span class="s2">"body"</span> <span class="p">:</span> <span class="s2">"Bob wants to play poker"</span>
+      <span class="p">},</span>
+      <span class="s2">"badge"</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="p">},</span>
+  <span class="s2">"payload"</span><span class="p">:</span> <span class="p">{</span>
+       <span class="s2">"messageId"</span><span class="p">:</span> <span class="s2">"ABWHEVDH"</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"sent"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7e976aa46427841e58af2d05a9da"</span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"failed"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn</span><span class="se">\'</span><span class="s2">t exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No device is linked to user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
