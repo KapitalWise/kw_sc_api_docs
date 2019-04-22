@@ -1,5 +1,5 @@
 ---
-title: /users/:id/device
+title: /users/:id/devices
 position: 1.6
 type: post
 description: Adds a device to user

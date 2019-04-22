@@ -2,12 +2,14 @@
 title: /users
 position: 1.0
 type: get
-description: List all users
+description: List all users on the basis of filters passed
 parameters:
   - name: offset
     content: Offset the results by this amount
   - name: limit
     content: Limit the number of users returned
+  - name: filter (like email, passcode, city etc.)
+    content: fields passed which acts as a filter to find user
 content_markdown: |-
   This call will return a maximum of 100 users
   {: .info }
@@ -15,26 +17,26 @@ content_markdown: |-
   Lists all the users in the system. You can paginate by using the parameters listed above.
 left_code_blocks:
   - code_block: |-
-      $.get("http://api.kapitalwise.com/users/", { "token": "YOUR_APP_KEY"}, function(data) {
+      $.get("http://api.kapitalwise.com/users?email=1@gmail.com", { "token": "YOUR_APP_KEY"}, function(data) {
         alert(data);
       });
     title: jQuery
     language: javascript
   - code_block: |-
-      r = requests.get("http://api.kapitalwise.com/users/", token="YOUR_APP_KEY")
+      r = requests.get("http://api.kapitalwise.com/users?email=1@gmail.com", token="YOUR_APP_KEY")
       print r.text
     title: Python
     language: python
   - code_block: |-
       var request = require("request");
-      request("http://api.kapitalwise.com/users?token=YOUR_APP_KEY", function (error, response, body) {
+      request("http://api.kapitalwise.com/users?email=1@gmail.com&&token=YOUR_APP_KEY", function (error, response, body) {
       if (!error && response.statusCode == 200) {
         console.log(body);
       }
     title: Node.js
     language: javascript
   - code_block: |-
-      curl http://sampleapi.readme.com/orders?key=YOUR_APP_KEY
+      curl http://api.kapitalwise.com/users?email=1@gmail.com
     title: Curl
     language: bash
 right_code_blocks:

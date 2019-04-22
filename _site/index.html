@@ -79,13 +79,6 @@
 					
 					
 						<li>
-							<a href="#apiusers_link_to_digit">
-								/users/digit
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
 							<a href="#apiusers_list">
 								/users
 								<span class="endpoint get"></span>
@@ -114,16 +107,16 @@
 						</li>
 					
 						<li>
-							<a href="#apiusers_delete">
-								/users/:id
-								<span class="endpoint delete"></span>
+							<a href="#apiusers_update_list">
+								/users
+								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiusers_get_by_email">
-								/users/email
-								<span class="endpoint get"></span>
+							<a href="#apiusers_delete">
+								/users/:id
+								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
@@ -136,7 +129,7 @@
 					
 						<li>
 							<a href="#apiusers_add_device">
-								/users/:id/device
+								/users/:id/devices
 								<span class="endpoint post"></span>
 							</a>
 						</li>
@@ -416,123 +409,6 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiusers_link_to_digit">
-						/users/digit
-						
-							<span class="endpoint post"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/users_link_to_digit.md">Edit</a>
-				</h3>
-				
-					<p class="description">Link user to Digit Platform</p>
-				
-				
-				
-				    <h6>Parameters</h6>
-				    <dl>
-				        
-				            <dt>firstName</dt>
-				            <dd>User's first name</dd>
-				        
-				            <dt>lastName</dt>
-				            <dd>User's last name</dd>
-				        
-				            <dt>email</dt>
-				            <dd>User's email</dd>
-				        
-				            <dt>passcode</dt>
-				            <dd>Digit passcode</dd>
-				        
-				            <dt>password</dt>
-				            <dd>Password</dd>
-				        
-				    </dl>
-				
-
-				<p class="success">The user will automatically be added and enabled</p>
-
-<p>Adds a user to your collection.</p>
-
-				
-				
-				    
-				        
-
-
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/digit"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-  <span class="s2">"firstName"</span><span class="p">:</span> <span class="s2">"John"</span><span class="p">,</span>
-  <span class="s2">"lastName"</span><span class="p">:</span> <span class="s2">"Doe"</span><span class="p">,</span>
-  <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"john.doe@gmail.com"</span><span class="p">,</span>
-  <span class="s2">"passcode"</span><span class="p">:</span> <span class="s2">"72537252"</span><span class="p">,</span>
-  <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"pass123"</span>
-<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-		            
-		        
-			</section>
-			
-			    <section class="right-code">
-	    			
-		    		    
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> 
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05/28/1988"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10010"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W 23rd Street"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"usResident"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"brokerDealerAff"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"boardMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"subBackupWithld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"finWellScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"goalSubscriptions"</span><span class="p">:[{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-		    		    
-
-
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User with this email already exists"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Known error"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid password"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid passcode"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
 					<a id="apiusers_list">
 						/users
 						
@@ -542,7 +418,7 @@
 					<a class="editor-link" href="cloudcannon:collections/_api/users_list.md">Edit</a>
 				</h3>
 				
-					<p class="description">List all users</p>
+					<p class="description">List all users on the basis of filters passed</p>
 				
 				
 				
@@ -554,6 +430,9 @@
 				        
 				            <dt>limit</dt>
 				            <dd>Limit the number of users returned</dd>
+				        
+				            <dt>filter (like email, passcode, city etc.)</dt>
+				            <dd>fields passed which acts as a filter to find user</dd>
 				        
 				    </dl>
 				
@@ -568,7 +447,7 @@
 				        
 
 
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/"</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users?email=1@gmail.com"</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -577,7 +456,7 @@
 				        
 
 
-<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.kapitalwise.com/users/"</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s">"YOUR_APP_KEY"</span><span class="p">)</span>
+<div title="Python" class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http://api.kapitalwise.com/users?email=1@gmail.com"</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s">"YOUR_APP_KEY"</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
 </code></pre></div></div>
 
@@ -586,7 +465,7 @@
 
 
 <div title="Node.js" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
-<span class="nx">request</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users?token=YOUR_APP_KEY"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">request</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users?email=1@gmail.com&amp;&amp;token=YOUR_APP_KEY"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
 <span class="p">}</span>
@@ -596,7 +475,7 @@
 				        
 
 
-<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://sampleapi.readme.com/orders?key<span class="o">=</span>YOUR_APP_KEY
+<div title="Curl" class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://api.kapitalwise.com/users?email<span class="o">=</span>1@gmail.com
 </code></pre></div></div>
 
 		            
@@ -1061,6 +940,119 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
+					<a id="apiusers_update_list">
+						/users
+						
+							<span class="endpoint put"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/users_update_list.md">Edit</a>
+				</h3>
+				
+					<p class="description">Updates the user on the basis of filters passed as query parameters</p>
+				
+				
+				
+				    <h6>Parameters</h6>
+				    <dl>
+				        
+				            <dt>firstName</dt>
+				            <dd>User's first name</dd>
+				        
+				            <dt>lastName</dt>
+				            <dd>User's last name</dd>
+				        
+				            <dt>email</dt>
+				            <dd>User's email</dd>
+				        
+				            <dt>password</dt>
+				            <dd>Password</dd>
+				        
+				    </dl>
+				
+
+				<p class="success">The user will automatically be added and enabled</p>
+
+<p>Adds a user to your collection.</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users?passcode=1234567"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="s2">"token"</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+  <span class="s2">"firstName"</span><span class="p">:</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="s2">"lastName"</span><span class="p">:</span> <span class="s2">"Doe"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"john.doe@gmail.com"</span><span class="p">,</span>
+  <span class="s2">"password"</span><span class="p">:</span> <span class="s2">"pass123"</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w"> 
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05/28/1988"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10010"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W 23rd Street"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"usResident"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"brokerDealerAff"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"boardMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subBackupWithld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"finWellScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"goalSubscriptions"</span><span class="p">:[{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">}],</span><span class="w">
+  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User with this email already exists"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Known error"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid password"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid passcode"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
 					<a id="apiusers_delete">
 						/users/:id
 						
@@ -1107,92 +1099,6 @@
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deleted"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-		    		    
-
-
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn't exist"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-			    	
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="apiusers_get_by_email">
-						/users/email
-						
-							<span class="endpoint get"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/users_get_by_email.md">Edit</a>
-				</h3>
-				
-					<p class="description">Get User</p>
-				
-				
-				
-				    <h6>Parameters</h6>
-				    <dl>
-				        
-				            <dt>email</dt>
-				            <dd>email of the user</dd>
-				        
-				    </dl>
-				
-
-				
-
-				
-				
-				    
-				        
-
-
-<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/3"</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
-<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-		            
-		        
-			</section>
-			
-			    <section class="right-code">
-	    			
-		    		    
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> 
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05/28/1988"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10010"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W 23rd Street"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"usResident"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"brokerDealerAff"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"boardMember"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"subBackupWithld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"false"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+19143184030"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"finWellScore"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"goalSubscriptions"</span><span class="p">:[{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">}],</span><span class="w">
-  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1326,7 +1232,7 @@
 			<section class="left-docs">
 				<h3>
 					<a id="apiusers_add_device">
-						/users/:id/device
+						/users/:id/devices
 						
 							<span class="endpoint post"></span>
 						

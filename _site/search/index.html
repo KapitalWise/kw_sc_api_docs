@@ -79,13 +79,6 @@
 					
 					
 						<li>
-							<a href="/#apiusers_link_to_digit">
-								/users/digit
-								<span class="endpoint post"></span>
-							</a>
-						</li>
-					
-						<li>
 							<a href="/#apiusers_list">
 								/users
 								<span class="endpoint get"></span>
@@ -114,16 +107,16 @@
 						</li>
 					
 						<li>
-							<a href="/#apiusers_delete">
-								/users/:id
-								<span class="endpoint delete"></span>
+							<a href="/#apiusers_update_list">
+								/users
+								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiusers_get_by_email">
-								/users/email
-								<span class="endpoint get"></span>
+							<a href="/#apiusers_delete">
+								/users/:id
+								<span class="endpoint delete"></span>
 							</a>
 						</li>
 					
@@ -136,7 +129,7 @@
 					
 						<li>
 							<a href="/#apiusers_add_device">
-								/users/:id/device
+								/users/:id/devices
 								<span class="endpoint post"></span>
 							</a>
 						</li>
@@ -566,7 +559,7 @@
 						
 						"api-users-add-device": {
 							"id": "api-users-add-device",
-							"title": "/users/:id/device",
+							"title": "/users/:id/devices",
 							"category": "api",
 							"description": "Adds a device to user",
 		  				"type": "post",
@@ -615,45 +608,11 @@
 					
 						,
 						
-						"api-users-get-by-email": {
-							"id": "api-users-get-by-email",
-							"title": "/users/email",
-							"category": "api",
-							"description": "Get User",
-		  				"type": "get",
-							"url": "/#apiusers_get_by_email",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-users-link-to-digit": {
-							"id": "api-users-link-to-digit",
-							"title": "/users/digit",
-							"category": "api",
-							"description": "Link user to Digit Platform",
-		  				"type": "post",
-							"url": "/#apiusers_link_to_digit",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
 						"api-users-list": {
 							"id": "api-users-list",
 							"title": "/users",
 							"category": "api",
-							"description": "List all users",
+							"description": "List all users on the basis of filters passed",
 		  				"type": "get",
 							"url": "/#apiusers_list",
 							"content": ""
@@ -673,6 +632,23 @@
 							"description": "Update User",
 		  				"type": "put",
 							"url": "/#apiusers_update",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-users-update-list": {
+							"id": "api-users-update-list",
+							"title": "/users",
+							"category": "api",
+							"description": "Updates the user on the basis of filters passed as query parameters",
+		  				"type": "put",
+							"url": "/#apiusers_update_list",
 							"content": ""
 						}
 						

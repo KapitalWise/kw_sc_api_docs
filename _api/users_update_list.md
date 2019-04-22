@@ -1,8 +1,8 @@
 ---
-title: /users/digit
-position: 1.0
-type: post
-description: Link user to Digit Platform
+title: /users
+position: 1.4
+type: put
+description: Updates the user on the basis of filters passed as query parameters
 parameters:
   - name: firstName
     content: User's first name
@@ -10,8 +10,6 @@ parameters:
     content: User's last name
   - name: email
     content: User's email
-  - name: passcode
-    content: Digit passcode 
   - name: password
     content: Password
 content_markdown: |-
@@ -21,12 +19,11 @@ content_markdown: |-
   Adds a user to your collection.
 left_code_blocks:
   - code_block: |-
-      $.post("http://api.kapitalwise.com/users/digit", {
+      $.put("http://api.kapitalwise.com/users?passcode=1234567", {
         "token": "YOUR_APP_KEY",
         "firstName": "John",
         "lastName": "Doe",
         "email": "john.doe@gmail.com",
-        "passcode": "72537252",
         "password": "pass123"
       }, function(data) {
         alert(data);
@@ -35,7 +32,7 @@ left_code_blocks:
     language: javascript
 right_code_blocks:
   - code_block: |-
-      { 
+      [{ 
         "id": 3,
         "dateOfBirth": "05/28/1988",
         "state": "NY",
@@ -54,7 +51,7 @@ right_code_blocks:
         "finWellScore": null,
         "goalSubscriptions":[{"id":1, "status": "ACTIVE"}],
         "accounts": [1, 2, 3]
-      }
+      }]
     title: Response
     language: json
   - code_block: |-
