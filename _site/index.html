@@ -128,6 +128,13 @@
 						</li>
 					
 						<li>
+							<a href="#apisavingInsight_getByUser">
+								/users/:id/savingInsights
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="#apiusers_add_device">
 								/users/:id/devices
 								<span class="endpoint post"></span>
@@ -1208,6 +1215,101 @@
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not recommend any goal"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Necessary parameter(s) are missing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong on server-side"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User doesn</span><span class="se">\'</span><span class="s2">t exist"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apisavingInsight_getByUser">
+						/users/:id/savingInsights
+						
+							<span class="endpoint get"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/savingInsight_getByUser.md">Edit</a>
+				</h3>
+				
+					<p class="description">Saving insights for a user</p>
+				
+				
+				
+				    <h6>Parameters</h6>
+				    <dl>
+				        
+				            <dt>offset</dt>
+				            <dd>Offset the results by this amount</dd>
+				        
+				            <dt>limit</dt>
+				            <dd>Limit the number of objects returned</dd>
+				        
+				    </dl>
+				
+
+				<p class="info">Returns an array of timely (eg. weekly) savings made by the user</p>
+
+				
+				
+				    
+				        
+
+
+<div title="jQuery" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"http://api.kapitalwise.com/users/123/savingInsights?offset=0&amp;limit=10"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">token</span><span class="p">:</span> <span class="s2">"YOUR_APP_KEY"</span><span class="p">,</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+		            
+		        
+			</section>
+			
+			    <section class="right-code">
+	    			
+		    		    
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">[</span><span class="w">
+ </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">225.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"asOfDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-07T18:30:00.000Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">736.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"asOfDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-014T18:30:00.000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+			    	
+		    		    
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No saving insight found"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
