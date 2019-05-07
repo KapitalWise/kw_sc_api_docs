@@ -22,20 +22,21 @@ left_code_blocks:
     language: javascript
 right_code_blocks:
   - code_block: |2-
-       [
        {
-        "id": 1,
-        "user": 123,
-        "amount": 225.00,
-        "asOfDate": "2019-04-07T18:30:00.000Z"
-        },
-        {
-        "id": 2,
-        "user": 123,
-        "amount": 736.00,
-        "asOfDate": "2019-04-014T18:30:00.000Z"
+         "user":123,
+         "savingInsights": [
+           {
+              "id": 1,
+              "amount": 225.00,
+              "asOfDate": "2019-04-07T18:30:00.000Z"
+            },
+            {
+               "id": 2,
+               "amount": 736.00,
+               "asOfDate": "2019-04-014T18:30:00.000Z"
+            }
+          ]
         }
-        ]
 
     title: Response
     language: json
